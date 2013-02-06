@@ -11,7 +11,7 @@
    ========================================================================== */
 
 body {
-    padding-top: 100px;
+    padding-top: 112px;
     font-size: 16px;
     font-family: 'Source Sans Pro', sans-serif;
     background: url(/img/bg-one.jpg) repeat scroll left top transparent;
@@ -28,6 +28,7 @@ body {
     /*width: 178px;
     height: 90px;*/
 }
+.logo-container a img{ margin-bottom: 30px; }
 .logo-container a:hover {
     color: rgb(114, 162, 15);
     text-decoration: none;
@@ -40,7 +41,7 @@ body {
 }
 .introduction-wrapper {
     /*margin-top: -20px;*/
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -727,7 +728,7 @@ ul.meta {
 }
 @media (max-width: 767px) {
     body {
-        padding-top: 120px;
+        padding-top: 170px;
     }
     .nav-container ul {
         display: none;
