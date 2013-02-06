@@ -171,6 +171,23 @@
   };
 })(jQuery);
 
+(function ($) {
+  /*
+  jquery.twitter.js v1.6
+  Last updated: 16 October 2012
+
+  Created by Damien du Toit
+  http://coda.co.za/content/projects/jquery.twitter/
+
+  Licensed under a Creative Commons Attribution-Non-Commercial 3.0 Unported License
+  http://creativecommons.org/licenses/by-nc/3.0/
+  */
+
+  function isEven(n) {
+    n = Number(n);
+    return n === 0 || !!(n && !(n % 2));
+  }
+
   $.fn.getTwitter2 = function (options) {
 
     $.fn.getTwitter.defaults = {
@@ -326,3 +343,4 @@
     }
   };
 })(jQuery);
+
