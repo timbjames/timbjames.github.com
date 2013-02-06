@@ -23,10 +23,10 @@ body {
 .logo-container a {
     font-size: 30px;
     color: #fff;
-    background:  url(/img/logo.png) no-repeat left top;    
+    /*background:  url(/img/logo.png) no-repeat left top;*/  
     display: block;
-    width: 178px;
-    height: 90px;
+    /*width: 178px;
+    height: 90px;*/
 }
 .logo-container a:hover {
     color: rgb(114, 162, 15);
@@ -39,7 +39,8 @@ body {
     font-weight: bold;
 }
 .introduction-wrapper {
-    margin-top: -20px;
+    /*margin-top: -20px;*/
+    margin-top: 10px;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -740,6 +741,7 @@ ul.meta {
     #social-icons-small ul {
         float: left;
     }
+.logo-container a{ display: initial; }
 }
 @media (max-width: 480px) {
     .portfolio-main {
