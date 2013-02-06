@@ -402,6 +402,11 @@ ul.meta {
     clear: both;
     margin-bottom: 20px;
 }
+.widget img.float-left{
+  float: left;
+  margin-right: 10px;
+  display: block;
+}
 .ok-style li:before {
     float: left;
 	font-family: 'FontAwesome';
