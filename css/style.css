@@ -11,7 +11,7 @@
    ========================================================================== */
 
 body {
-    padding-top: 112px;
+    padding-top: 107px;
     font-size: 16px;
     font-family: 'Source Sans Pro', sans-serif;
     background: url(/img/bg-one.jpg) repeat scroll left top transparent;
@@ -28,7 +28,7 @@ body {
     /*width: 178px;
     height: 90px;*/
 }
-.logo-container a img{ margin-bottom: 30px; }
+.logo-container a img{ margin-bottom: 24px; }
 .logo-container a:hover {
     color: rgb(114, 162, 15);
     text-decoration: none;
