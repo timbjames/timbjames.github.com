@@ -24,15 +24,17 @@ body {
     font-size: 30px;
     color: #fff;
     background:  url(/img/logo.png) no-repeat left center;
-    line-height: 80px;
+    line-height: 90px;
+    display: block;
 }
 .logo-container a:hover {
     color: rgb(114, 162, 15);
     text-decoration: none;
 }
+.logo-container a span{ display: none; }
 .logo-container {
     font-family: 'Oregano', cursive;
-    /*margin-top: 5px;*/
+    margin-top: 5px;
     font-weight: bold;
 }
 .introduction-wrapper {
