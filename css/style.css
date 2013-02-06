@@ -23,9 +23,10 @@ body {
 .logo-container a {
     font-size: 30px;
     color: #fff;
-    background:  url(/img/logo.png) no-repeat left center;
-    line-height: 90px;
+    background:  url(/img/logo.png) no-repeat left center;    
     display: block;
+    width: 178px;
+    height: 90px;
 }
 .logo-container a:hover {
     color: rgb(114, 162, 15);
@@ -34,7 +35,7 @@ body {
 .logo-container a span{ display: none; }
 .logo-container {
     font-family: 'Oregano', cursive;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
     font-weight: bold;
 }
 .introduction-wrapper {
