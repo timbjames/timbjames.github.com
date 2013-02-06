@@ -407,6 +407,11 @@ ul.meta {
   margin-right: 10px;
   display: block;
 }
+.widget li.float-left{
+  float: left;
+  margin-right: 10px;
+  display: block;
+}
 .ok-style li:before {
     float: left;
 	font-family: 'FontAwesome';
