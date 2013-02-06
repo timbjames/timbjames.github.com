@@ -7,8 +7,10 @@ title: Tags
 {% for tag in site.tags %}
 <a name="{{ tag[0] }}"></a>
 <h3>{{ tag[0] }}</h3>
+  <ul>
   {% for post in tag[1] %}
 <li><a href="{{ post.url | remove:'.html' }}">{{ post.title }}</a> ({{ post.date | date_to_string }})</li>
   {% endfor %}
+    </ul>
 {% endfor %}
 </div>
