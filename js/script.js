@@ -1,7 +1,21 @@
 /***************************************************
 	  SELECT MENU ON SMALL DEVICES
 ***************************************************/
-jQuery(document).ready(function($){
+$(function($){
+
+  $("#twitter-feed").getTwitter({
+		userName: "timbjames",
+		numTweets: 5,
+		loaderText: "Loading tweets...",
+		slideIn: true,
+		slideDuration: 750,
+		showHeading: true,
+		headingText: "Latest Tweets",
+		showProfileLink: true,
+		showTimestamp: true,
+		includeRetweets: false,
+		excludeReplies: true
+	});
 								
 	var $menu_select = $("<select />");	
 	$("<option />", {"selected": "selected", "value": "", "text": "Site Navigation"}).appendTo($menu_select);

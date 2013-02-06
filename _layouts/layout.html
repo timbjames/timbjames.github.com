@@ -56,21 +56,21 @@
                 <div class="row">
                     <div class="span4">
                         <div class="logo-container">
-                            <a href="index.html">timjames.me</a>
+                            <a href="/index">timjames.me</a>
                         </div>
                     </div>
                     <div class="span8">
                         <div class="nav-container nav">             
                             <ul class="pull-right">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="http://twitter.github.com/bootstrap/index.html">Features</a>
-                                    <ul>
+                                <li><a href="/index">Home</a></li>
+                                <li><a href="/about">about</a>
+                                    <!--<ul>
                                         <li><a href="http://twitter.github.com/bootstrap/base-css.html">Base CSS</a></li>
                                         <li><a href="http://twitter.github.com/bootstrap/components.html">Components</a></li>
                                         <li><a href="http://twitter.github.com/bootstrap/javascript.html">JavaScript</a></li>
-                                    </ul>
+                                    </ul>-->
                                 </li>
-                                <li><a href="portfolio.html">Portfolio</a>
+                                <!--<li><a href="portfolio.html">Portfolio</a>
                                     <ul>
                                         <li><a href="portfolio.html">2 Columns Portfolio</a></li>
                                         <li><a href="portfolio-single.html">Single Portfolio Page</a></li>
@@ -81,7 +81,7 @@
                                         <li><a href="archive.html">Normal Archive</a></li>
                                         <li><a href="cat-archive.html">Category Archive</a></li>
                                     </ul>
-                                </li>                                    
+                                </li>-->                                    
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
@@ -259,7 +259,7 @@
                         </ul> 
                     </div>-->
 
-                    <div class="pagination">
+                    <!--<div class="pagination">
                         <ul>
                             <li><a href=""></i>Prev</a></li>
                             <li class="active"><a href="">1</a></li>
@@ -268,7 +268,7 @@
                             <li><a href="">4</a></li>
                             <li><a href="">Next</i></a></li>
                         </ul>
-                    </div>
+                    </div>-->
 
                 </div>
 
@@ -355,12 +355,13 @@
                         </div>
 
                         <div class="widget">
-                            <div class="recent-twitter">
-                                <h3 class="widget-title">Latest Tweets</h3>
+                            <div id="twitter-feed" class="recent-twitter">
+                                <!--<h3 class="widget-title">Latest Tweets</h3>
+                                <div id="twitter-feed"></div>
                                 <ul class="without-style">
                                     <li class="tweet_first tweet_odd"><span class="tweet_text">You know you're good in <a href="">#WordPress</a> if you can use WordPress in any language.</span><span class="tweet_time"><a href="" title="view tweet on twitter"> about a day ago</a></span></li>
                                     <li class="tweet_even"><span class="tweet_text">Confucius: Tell me and I forget. Show me and I remember. Let me do and I understand.</span><span class="tweet_time"><a href="" title="view tweet on twitter"> about 6 days ago</a></span></li>
-                                </ul>
+                                </ul>-->
                             </div>
                         </div>
 
@@ -505,6 +506,7 @@
       <script src="/js/libs/bootstrap.min.js"></script>        
       <script src="/js/libs/jquery.isotope.min.js"></script>
       <script src="/js/libs/jquery.prettyPhoto.js"></script>
+      <script src="/js/libs/jquery.twitter.js"></script>
       <script src="/js/script.js"></script>
         
       <script>
@@ -514,8 +516,10 @@
       </script>
         
       <script type="text/javascript">
+            
             // cache container
             var $container = $('#portfolio-container');
+            
             // initialize isotope
             $container.isotope({
                 // options...
@@ -528,10 +532,12 @@
                 $container.isotope({ filter: selector });
                 return false;
             });
+            
             // update columnWidth on window resize
             $(window).smartresize(function() {
                 $container.isotope('reLayout');
             });
+
 		  </script>
 
 
