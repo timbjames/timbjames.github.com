@@ -8,13 +8,16 @@
 <html class="no-js" lang="en">
 <!--<![endif]-->  <head>
       
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta charset="utf-8">
         
       <title>{{page.title}} - timjames.me</title>
       
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="tim james blog">
+      <meta name="description" content="{{ page.title }} - tim james blog">
       <meta name="author" content="timjames.me">
+      <meta name="keywords" content="tim james, software developer glasgow, freelance web developer glasgow, freelance developer, {% for tag in page.tags %}{{ tag }} {% endfor %}" />   
+      <meta name="application-name" content="timjames.me"/> 
            
       <link href="/css/bootstrap.min.css" rel="stylesheet">
       <link href="/css/bootstrap-responsive.css" rel="stylesheet">
@@ -23,11 +26,11 @@
       <link rel="stylesheet" href="/css/prettyPhoto.css">
       <link href='http://fonts.googleapis.com/css?family=Quantico|Source+Sans+Pro|Oswald|Oregano' rel='stylesheet' type='text/css'>
 
-      <link rel="shortcut icon" href="assets/ico/favicon.ico">
-      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+      <link rel="shortcut icon" href="/favicon.ico">
+      <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
       <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">-->
         
       <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -122,7 +125,9 @@
                             <li><i class="icon-comment"></i><a href="">1 Comments</a></li>
                         </ul>  
                         <ul class="tags">
-                            <li class="tags-list"><i class="icon-tags"></i>  <a href="" rel="tag">my link</a> <a href="" rel="tag">interesting</a> <a href="" rel="tag">link</a></li>
+                            <li class="tags-list">
+                              <i class="icon-tags"></i>  <a href="" rel="tag">my link</a> <a href="" rel="tag">interesting</a> <a href="" rel="tag">link</a>
+                            </li>
                         </ul> 
                     </div>
 
@@ -279,7 +284,11 @@
                         </div>
 
                         <div class="widget">
-                            <ul class="nav nav-tabs" id="myTab">
+                            <h3 class="widget-title">Tags</h3>
+                            {% for tag in site.tags %}
+                              <a href="/tags/#{{ tag[0] }}"><span class="badge" style="margin-top:2px;font-size: {{ tag[1] | size | minus:1 | times:4 | plus:12 }}px;line-height:{{ tag[1] | size | minus:1 | times:4 | times:14 | divided_by:12 | plus:14 }}px">{{ tag[0] }} x{{ tag[1] | size }}</span></a><span> </span>
+                            {% endfor %}
+                            <!--<ul class="nav nav-tabs" id="myTab">
                                 <li class="active"><a href="#home" data-toggle="tab">Posts</a></li>
                                 <li><a href="#all-tags" data-toggle="tab">Tags</a></li>
                                 <li><a href="#messages" data-toggle="tab">Messages</a></li>
@@ -308,7 +317,7 @@
                                 <div class="tab-pane" id="messages">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
 
                         <div class="widget">
