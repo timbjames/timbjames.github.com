@@ -3,13 +3,25 @@ layout: layout
 title: tim james portolio
 ---
 <ul>
-  {% for cat in site.categories %}
+  
+    {% for cat in site.categories %}
     
-    {{ cat[0] }}
+    <li>{{ cat[0] }}
+    
+        <ul>
+        
+            {% for posts in category %}
 
-    {% for ca in cat[1] %}
-        <li><a href="{{ post.url | remove:'.html' }}">{{ post.title }}</a> ({{ post.date | date_to_string }})</li>
-    {% endfor %}
+              {% for post in posts %}
+                <li>{{ post.title }}</li>
+              {% endfor %}
 
+            {% endfor %}
+        
+        </ul>
+
+    </li>
+    
   {% endfor %}
+
 </ul>
