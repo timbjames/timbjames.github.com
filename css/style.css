@@ -151,7 +151,8 @@ body {
     width: 100%;
 }
 .meta, .tags {
-    color: rgb(114, 162, 15);
+    /*color: rgb(114, 162, 15);*/
+    color: #0fb2d0;
     font-size: 14px;
 }
 .meta a, tags a {
@@ -382,7 +383,8 @@ ul.meta {
     margin-bottom: 5px;
 }
 .widget-container a, #copyright-and-credits a {
-    color: rgb(114, 162, 15);
+    /*color: rgb(114, 162, 15);*/
+    color: #0fb2d0;
 }
 .widget-container ul#recentcomments li:before {
 	float: left;
@@ -526,7 +528,8 @@ ul.meta {
     border-top-left-radius: 5px;
 }
 #copyright-and-credits a:hover, widget-container a:hover {
-    color: rgb(114, 162, 15);
+    /*color: rgb(114, 162, 15);*/
+    color: #ff6a00;
 }
 #copyright-and-credits a {
     transition: color 1s;
