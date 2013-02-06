@@ -4,6 +4,12 @@ title: tim james portolio
 ---
 <ul>
   {% for cat in site.categories %}
+    
     {{ cat[0] }}
+
+    {% for ca in cat[1] %}
+        <li><a href="{{ post.url | remove:'.html' }}">{{ post.title }}</a> ({{ post.date | date_to_string }})</li>
+    {% endfor %}
+
   {% endfor %}
 </ul>
