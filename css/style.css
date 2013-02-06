@@ -114,11 +114,11 @@ body {
 .nav-container ul ul ul { left:178px;top:0;padding:0 0 0 5px;background:none; }
 .nav-container ul ul li:hover ul {top:0px;}
 
-.nav-container li [class^="icon-"]:before, .nav-container li [class*=" icon-"]:before{
+.nav-container li[class^="icon-"], .nav-container li[class*=" icon-"]{
     color:  #0fb2d0;
 }
             
-.nav-container>ul>li:after { /*content: " //";*/ content: " "; color: #555; color: rgba(255,255,255,0.2); margin-left: 10px; line-height: 30px; font-size: 17px;}
+.nav-container>ul>li:after { /*content: " //";*/ content: " ."; color: #555; color: rgba(255,255,255,0.2); margin-left: 20px; line-height: 30px; font-size: 17px;}
 .nav-container>ul>li:last-child:after {content:none;}
 
 .nav-container li li:first-child>a {-webkit-border-radius:6px 6px 0 0;-moz-border-radius:6px 6px 0 0;border-radius:6px 6px 0 0;}
@@ -141,7 +141,8 @@ body {
 }
 .nav-container ul li a:hover {
     text-decoration: none;
-    color: rgb(114, 162, 15);
+    /*color: rgb(114, 162, 15);*/
+    color: #0fb2d0;
 }
 .nav {
     margin-bottom: 10px;
