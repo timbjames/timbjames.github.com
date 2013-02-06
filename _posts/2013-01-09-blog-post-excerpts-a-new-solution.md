@@ -1,4 +1,5 @@
 ---
+published: false
 layout: post
 title: Blog Post Excerpts - A New Solution
 location: Zurich
