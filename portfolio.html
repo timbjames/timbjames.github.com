@@ -1,0 +1,9 @@
+---
+layout: layout
+title: tim james blog
+---
+{% for portfolio in site.portfolios limit:10 %}
+
+{{ portfolio.title }}
+
+{% endfor %}
