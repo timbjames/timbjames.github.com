@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Timbjames.github.com : timbjames gitpages repo" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/stylesheet.css">
+
+    <title>Timbjames.github.com</title>
+
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/timbjames">View on GitHub</a>
+
+          <h1 id="project_title">Timbjames.github.com</h1>
+          <h2 id="project_tagline">timbjames gitpages repo</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+
+          <h3>Knockoutjs Sammy.js Testing</h3>
+
+          <h4>Setup</h4>
+
+          <ul>
+              <li>Install-Package jQuery</li>
+              <li>Install-Package knockoutjs</li>
+              <li>Install-Package Sammy.js</li>
+          </ul>
+
+          <p><button id="one" data-bind="click: loadItems">Load Items</button></p>
+          <p><a href="/push/one">Click Here</a></p>
+
+          <!-- ko foreach: items -->
+          <span data-bind="text: name"></span><br />
+          <!-- /ko -->
+
+          <div id="container">
+              <div id="info" class="warning"></div>
+          </div>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+      
+      <script src="/Scripts/jquery-1.9.0.min.js"></script>
+      <script src="/Scripts/knockout-2.2.1.js"></script>
+      <script src="/Scripts/sammy-0.7.4.min.js"></script>
+      <script src="/Scripts/mylibs/examples/ko-sammy/ko-sammy.js"></script>
+
+  </body>
+</html>
