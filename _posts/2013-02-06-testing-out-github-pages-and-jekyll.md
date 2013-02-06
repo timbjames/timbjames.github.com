@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: Testing Github Pages with Jekyll
 location: Glasgow
