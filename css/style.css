@@ -23,7 +23,7 @@ body {
 .logo-container a {
     font-size: 30px;
     color: #fff;
-    background:  url(/img/logo.png) no-repeat left center;    
+    background:  url(/img/logo.png) no-repeat left top;    
     display: block;
     width: 178px;
     height: 90px;
@@ -35,7 +35,7 @@ body {
 .logo-container a span{ display: none; }
 .logo-container {
     font-family: 'Oregano', cursive;
-    /*margin-top: 5px;*/
+    margin-top: 5px;
     font-weight: bold;
 }
 .introduction-wrapper {
