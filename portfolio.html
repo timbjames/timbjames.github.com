@@ -1,9 +1,9 @@
 ---
 layout: layout
-title: tim james blog
+title: tim james portolio
 ---
 <ul>
   {% for cat in site.categories %}
-    <li><a href="/category/{{ cat[0] | downcase | replace: ' ', '-' }}" title="{{ cat[0] }}">{{ cat[0] }}</a></li>
+    {{ cat[0] }}
   {% endfor %}
 </ul>
