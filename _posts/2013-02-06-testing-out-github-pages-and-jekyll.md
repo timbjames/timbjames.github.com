@@ -2,6 +2,7 @@
 layout: post
 title: Testing Github Pages with Jekyll
 location: Glasgow
+author: Tim James
 tags:
 - github
 - jekyll
