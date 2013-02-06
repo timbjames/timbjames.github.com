@@ -407,7 +407,7 @@ ul.meta {
   margin-right: 10px;
   display: block;
 }
-.widget li.float-left{
+.widget ul.float-left li{
   float: left;
   margin-right: 10px;
   display: block;
