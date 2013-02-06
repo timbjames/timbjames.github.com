@@ -19,7 +19,7 @@ $(function($){
 
   $("#recent-tweets").getTwitter({
 		userName: "timbjames",
-		numTweets: 2,
+		numTweets: 5,
 		loaderText: "Loading tweets...",
 		slideIn: true,
 		slideDuration: 750,
