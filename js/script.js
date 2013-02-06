@@ -17,7 +17,7 @@ $(function($){
 		excludeReplies: true
 	});
 
-  $("#recent-tweets").getTwitter({
+  $("#recent-tweets").getTwitter2({
 		userName: "timbjames",
 		numTweets: 5,
 		loaderText: "Loading tweets...",
