@@ -26,7 +26,7 @@ $(function ($) {
     //      tagmode: "any",
     //      format: "json"
     //  },
-    $.getJson("http://api.flickr.com/services/feeds/groups_pool.gne?id=84100512@N02&lang=en-us&format=json&jsoncallback=?",      
+    $.getJSON("http://api.flickr.com/services/feeds/groups_pool.gne?id=84100512@N02&lang=en-us&format=json&jsoncallback=?",      
       function (data) {
           var $li, $a, $img;
           $.each(data.items, function (i, item) {
