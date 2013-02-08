@@ -21,7 +21,7 @@ $(function ($) {
     /* get flickr feed */
     /* 84100512@N02 */  
     //$.getJSON("http://api.flickr.com/services/feeds/groups_pool.gne?id=84100512@N02&lang=en-us&format=json&jsoncallback=?",  
-    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=84100512@N02&jsoncallback=?",
+    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
     {
           tags: "mount rainier",
           tagmode: "any",
