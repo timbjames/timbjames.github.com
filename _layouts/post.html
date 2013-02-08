@@ -3,9 +3,7 @@ layout: layout
 ---
 
 <div class="post-wrapper">
-  
-    <h3>{{page.title}} <i class="icon-link"></i></h3>
-  
+      
     {% if page.video_url %}
         <div class="video-wrapper">
           <iframe width="560" height="349"
@@ -16,6 +14,8 @@ layout: layout
             ></iframe>            
         </div>
     {% endif %}
+
+    <h3>{{page.title}} <i class="icon-link"></i></h3>
 
     {{ content }}
     
