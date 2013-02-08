@@ -14,3 +14,9 @@ image_text: This is the caption text
 ---
 
 Testing page images
+
+Image Markdown code:
+
+    ![](/img/blond-boxing-woman-in-black-punching-bag-930x620.jpg)
+
+![](/img/blond-boxing-woman-in-black-punching-bag-930x620.jpg)
