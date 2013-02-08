@@ -10,7 +10,7 @@ category: blog
 image_url: /img/blond-boxing-woman-in-black-punching-bag-930x620.jpg
 image_alt: this is the image alt
 image_caption: This is the caption
-image_caption_text: This is the caption text
+image_text: This is the caption text
 ---
 
 Testing page images
