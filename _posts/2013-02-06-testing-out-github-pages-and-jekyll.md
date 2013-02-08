@@ -6,7 +6,7 @@ author: Tim James
 tags:
 - github
 - jekyll
-category: categoryOne
+category: blog
 ---
 
 This is loaded as the Blog Post excert.

@@ -34,7 +34,7 @@ $(function ($) {
               $li.appendTo("#flickr-feed");
               //<li><a href="" title=""><img alt="Flickr" src="/img/6795452380_3ffa150da3_s.jpg"></a></li>
               //$("<img/>").attr("src", item.media.m).appendTo("#flickr-feed");
-              if (i == 12) return false;
+              if (i == 11) return false;
           });
       });
 
