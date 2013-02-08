@@ -7,6 +7,7 @@ tags:
 - github
 - jekyll
 category: portfolio
+video_url: http://www.youtube.com/embed/jPhkfk8EBsI
 ---
 
 This is a portfolio post
@@ -16,6 +17,4 @@ This is a portfolio post
 ##Portfolio Content
 
 This is loaded when viewing the full page.
-
-http://www.youtube.com/watch?v=jPhkfk8EBsI
 
