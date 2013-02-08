@@ -7,7 +7,7 @@ tags:
 - github
 - jekyll
 category: blog
-video_url: http://www.youtube.com/watch?v=uE-1RPDqJAY
+video_url: http://www.youtube.com/embed/8gQGHCvMzs8?rel=0&showinfo=0&autohide=1hd=1&wmode=transparent
 ---
 
 This is loaded as the Blog Post excert.
