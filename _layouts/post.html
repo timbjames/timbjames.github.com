@@ -15,6 +15,20 @@ layout: layout
         </div>
     {% endif %}
 
+    {% if page.image_url %}
+    <div class="image-type">
+        <a href="{{ page.image_url }}" rel="prettyPhoto" title="{{ page.image_alt }}"><img alt="{{ page.image_alt }}" src="{{ page.image_url }}"></a> 
+        <div class="image-zoom"><i class="icon-zoom-in icon-large"></i>
+        </div>
+        {% if page.image_caption %}
+        <div class="image-caption">
+            <h4>{{ page.image_caption }}</h4>
+            <p>{{ page.image_text }}</p>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+
     <h3>{{page.title}} <i class="icon-link"></i></h3>
 
     {{ content }}
