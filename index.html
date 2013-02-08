@@ -16,6 +16,20 @@ title: tim james blog
             ></iframe>            
         </div>
     {% endif %}
+    
+    {% if post.image_url %}
+    <div class="image-type">
+        <a href="{{ post.image_url }}" rel="prettyPhoto" title="{{ post.image_alt }}"><img alt="{{ post.image_alt }}" src="{{ post.image_url }}"></a> 
+        <div class="image-zoom"><i class="icon-zoom-in icon-large"></i>
+        </div>
+        {% if post.image_caption %}
+        <div class="image-caption">
+            <h4>{{ post.image_caption }}</h4>
+            <p>{{ post.image_text }}</p>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
 
     <h3><a href="{{ post.url | remove:'.html' }}" class="post-title">{{ post.title }}</a> <i class="icon-link"></i></h3>
   
