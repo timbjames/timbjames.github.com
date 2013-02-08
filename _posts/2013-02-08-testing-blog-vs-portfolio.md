@@ -17,5 +17,5 @@ This is a portfolio post
 
 This is loaded when viewing the full page.
 
-{% youtube jPhkfk8EBsI %}
+http://www.youtube.com/watch?v=jPhkfk8EBsI
 
