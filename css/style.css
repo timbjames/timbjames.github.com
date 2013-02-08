@@ -529,7 +529,7 @@ ul.meta {
 #social-icons-small li a.rss-link { background-position: 50% -260px; }
 #social-icons-small li a.linkedin-link { background-position: 50% -310px; }
 #social-icons-small li a.google-link { background-position: 50% -360px; }    
-#social-icons-small li a.so-link{ text-indent: initial;  }       
+#social-icons-small li a.so-link{ text-indent: initial; background-image: none;  }       
 #social-icons-small li a.so-link img{ width: 24px; }
 
 .credits {
