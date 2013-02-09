@@ -16,28 +16,28 @@ title: Contrib Youtube Orchard Field
     <p>The Field originally renders as</p>
     
 <pre>
-    <div class="youtube-field">
-        <iframe 
+    &lt;div class="youtube-field"&gt;
+        &lt;iframe 
             width="@Model.ContentField.Width" 
             height="@Model.ContentField.Height" 
             src="http://.../@Model.ContentField.Identifier?hd=1" 
             frameborder="0" 
-            allowfullscreen />
-    </div>
+            allowfullscreen /&gt;
+    &lt;/div&gt;
 </pre>
 
     <p>Which breaks the layout. So I updated it to:</p>
 
 
 <pre>
-    <div class="youtube-field">
-        <iframe 
+    &lt;div class="youtube-field"&gt;
+        &lt;iframe 
             width="@Model.ContentField.Width" 
             height="@Model.ContentField.Height" 
             src="http://.../@Model.ContentField.Identifier?hd=1" 
             frameborder="0"
-            allowfullscreen="true"></iframe>
-    </div>
+            allowfullscreen="true"&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
 </pre>
 
     <p><strong>Fixed!</strong></p>
