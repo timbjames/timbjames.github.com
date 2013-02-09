@@ -3,34 +3,46 @@ layout: layout
 title: Contrib Youtube Orchard Field
 ---
 
-I recently installed a new Orchard Field written by Andre Rodrigues.
+<div class="post-wrapper">
 
-Youtube Field - v0.91
+    <h1>Contrib Youtube Orchard Field</h1>
 
-Works like a charm, however breaks the layout of the page (Tested in Google Chrome and not bothered with others as this was broken).
+    <p>I recently installed a new Orchard Field written by Andre Rodrigues.</p>
 
-The Field originally renders as
+    <p>Youtube Field - v0.91</p>
 
-<div class="youtube-field">
-    <iframe 
-        width="@Model.ContentField.Width" 
-        height="@Model.ContentField.Height" 
-        src="http://.../@Model.ContentField.Identifier?hd=1" 
-        frameborder="0" 
-        allowfullscreen />
+    <p>Works like a charm, however breaks the layout of the page (Tested in Google Chrome and not bothered with others as this was broken).</p>
+    
+    <p>The Field originally renders as</p>
+    
+<pre>
+    <div class="youtube-field">
+        <iframe 
+            width="@Model.ContentField.Width" 
+            height="@Model.ContentField.Height" 
+            src="http://.../@Model.ContentField.Identifier?hd=1" 
+            frameborder="0" 
+            allowfullscreen />
+    </div>
+</pre>
+
+    <p>Which breaks the layout. So I updated it to:</p>
+
+
+<pre>
+    <div class="youtube-field">
+        <iframe 
+            width="@Model.ContentField.Width" 
+            height="@Model.ContentField.Height" 
+            src="http://.../@Model.ContentField.Identifier?hd=1" 
+            frameborder="0"
+            allowfullscreen="true"></iframe>
+    </div>
+</pre>
+
+    <p><strong>Fixed!</strong></p>
+
+    <p>I am always interested in hearing back from those who read my blog. Please leave a comment if you found this useful, want to suggest any changes to my code, or anything else! Thanks!</p>
+
+
 </div>
-
-Which breaks the layout. So I updated it to:
-
-<div class="youtube-field">
-    <iframe 
-        width="@Model.ContentField.Width" 
-        height="@Model.ContentField.Height" 
-        src="http://.../@Model.ContentField.Identifier?hd=1" 
-        frameborder="0"
-        allowfullscreen="true"></iframe>
-</div>
-
-Fixed!
-
-I am always interested in hearing back from those who read my blog. Please leave a comment if you found this useful, want to suggest any changes to my code, or anything else! Thanks!
