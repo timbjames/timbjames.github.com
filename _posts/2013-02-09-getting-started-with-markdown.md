@@ -25,6 +25,8 @@ Single line without any additional markup
     **bold**
     __bold__
 
+<!--excerpt-->
+
 ##Block quotes
 
     > block quote
