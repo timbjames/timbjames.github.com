@@ -80,7 +80,7 @@ There are some pseudo-protocols you can use in place of the link url;
 - id:name - The label will be wrapped with a <a id="name"> tag
 - raw:text - The text will be written verbatim to output and not processed
 
-    [IBM](abbr:International Business Machines)
+`[IBM](abbr:International Business Machines)`
 
 ##Images
 
