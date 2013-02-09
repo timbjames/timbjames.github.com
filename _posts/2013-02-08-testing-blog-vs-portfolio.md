@@ -4,8 +4,7 @@ title: Testing Github Pages with Jekyll
 location: Glasgow
 author: Tim James
 tags:
-- github
-- jekyll
+- testing
 category: portfolio
 video_url: http://www.youtube.com/embed/jPhkfk8EBsI?rel=0&showinfo=0&autohide=1hd=1&wmode=transparent
 ---

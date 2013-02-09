@@ -4,8 +4,7 @@ title: Testing Vimeo videos
 location: Glasgow
 author: Tim James
 tags:
-- github
-- jekyll
+- videos
 category: portfolio
 video_url: http://player.vimeo.com/video/2639782
 ---
