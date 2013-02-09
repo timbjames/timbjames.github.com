@@ -75,12 +75,12 @@ Shorthand for links
 
 There are some pseudo-protocols you can use in place of the link url;
 
-- abbr:description - The label will be wrapped with an <abbr> tag.
-- class:name - The label will be wrapped with a <span class="name"> tag
-- id:name - The label will be wrapped with a <a id="name"> tag
-- raw:text - The text will be written verbatim to output and not processed
+    - abbr:description - The label will be wrapped with an <abbr> tag.
+    - class:name - The label will be wrapped with a <span class="name"> tag
+    - id:name - The label will be wrapped with a <a id="name"> tag
+    - raw:text - The text will be written verbatim to output and not processed
 
-`[IBM](abbr:International Business Machines)`
+    [IBM](abbr:International Business Machines)
 
 ##Images
 
