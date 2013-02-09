@@ -3,6 +3,8 @@ layout: post
 title: Contrib Youtube Orchard Field
 location: Glasgow
 author: Tim James
+alias: /contrib-youtube-orchard-field
+category: blog
 tags:
 - orchardcms
 ---
