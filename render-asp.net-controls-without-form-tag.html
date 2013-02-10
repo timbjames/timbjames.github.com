@@ -1,8 +1,32 @@
 ---
 layout: layout
-title: Contrib Youtube Orchard Field
+title: Render ASP.Net controls without Form Tag
 ---
 
 <div class="post-wrapper">
 
+    <h1>Render ASP.Net controls without Form tag</h1>
+    	
+    <p>After all these years building websites with ASP.Net, I have never been in this situation before. I was trying to simply render a server control on a page which didn't have a Form tag.</p>
+    
+    <p>Of course this naturally produces an error</p>
+    
+    <pre>...must be placed inside a form tag with runat="server"</pre>
+    
+    <p>An easy solution is to override the Page.VerifyRenderingInServerForm Method.</p>
+    
+    <p><strong>C#</strong></p>
+    
+    <pre>public override void VerifyRenderingInServerForm(Control control){
+    &nbsp; &nbsp; return;
+    }</pre>
+    
+    <p><strong>VB</strong></p>
+    
+    <pre>Public Overrides Sub VerifyRenderingInServerForm(control As System.Web.UI.Control)
+    &nbsp; &nbsp; Return
+    End Sub</pre>
+       
+    <p>A Voila!</p>
+        <p>I am always interested in hearing back from those who read my blog. Please leave a comment if you found this useful, want to suggest any changes to my code, or anything else! Thanks!</p>    
 </div>
