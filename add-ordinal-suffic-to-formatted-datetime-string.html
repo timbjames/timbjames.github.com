@@ -1,8 +1,64 @@
 ---
 layout: layout
-title: Contrib Youtube Orchard Field
+title: Add Ordinal Suffix to formatted DateTime string
 ---
 
 <div class="post-wrapper">
 
+            <h1>Add Ordinal Suffix to formatted DateTime string</h1>
+    
+<p>This is something which I am sure has bugged you on many occasions, and you always wonder why it isn't built into the .net framework. How to add the Ordinal Suffix to a formatted DateTime string.</p>
+<p>There are many examples around the web, but I thought I would just share this one with you while I remember.</p>
+<h2>Example C#</h2>
+<pre style="font-family: Consolas; font-size: 13px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="color: blue;">public</span>&nbsp;<span style="color: blue;">static</span>&nbsp;<span style="color: blue;">string</span>&nbsp;GetOrdinal(<span style="color: blue;">int</span>&nbsp;num)
+{
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">switch</span>&nbsp;(num&nbsp;%&nbsp;100)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">case</span>&nbsp;11:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">case</span>&nbsp;12:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">case</span>&nbsp;13:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">return</span>&nbsp;num.ToString()&nbsp;+&nbsp;<span style="color: #a31515;">"th"</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">switch</span>&nbsp;(num&nbsp;%&nbsp;10)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">case</span>&nbsp;1:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">return</span>&nbsp;num.ToString()&nbsp;+&nbsp;<span style="color: #a31515;">"st"</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">case</span>&nbsp;2:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">return</span>&nbsp;num.ToString()&nbsp;+&nbsp;<span style="color: #a31515;">"nd"</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">case</span>&nbsp;3:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">return</span>&nbsp;num.ToString()&nbsp;+&nbsp;<span style="color: #a31515;">"rd"</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">default</span>:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">return</span>&nbsp;num.ToString()&nbsp;+&nbsp;<span style="color: #a31515;">"th"</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+ 
+}</pre>
+<h2>Example VB.Net</h2>
+<pre style="font-family: Consolas; font-size: 13px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="color: blue;">Public</span>&nbsp;<span style="color: blue;">Function</span>&nbsp;GetOrdinal(num&nbsp;<span style="color: blue;">As</span>&nbsp;<span style="color: blue;">Integer</span>)&nbsp;<span style="color: blue;">As</span>&nbsp;<span style="color: blue;">String</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Select</span>&nbsp;<span style="color: blue;">Case</span>&nbsp;(num&nbsp;<span style="color: blue;">Mod</span>&nbsp;100)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Case</span>&nbsp;11,&nbsp;12,&nbsp;13
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Return</span>&nbsp;<span style="color: #a31515;">"th"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">End</span>&nbsp;<span style="color: blue;">Select</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Select</span>&nbsp;<span style="color: blue;">Case</span>&nbsp;(num&nbsp;<span style="color: blue;">Mod</span>&nbsp;10)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Case</span>&nbsp;1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Return</span>&nbsp;<span style="color: #a31515;">"st"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Case</span>&nbsp;2
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Return</span>&nbsp;<span style="color: #a31515;">"nd"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Case</span>&nbsp;3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Return</span>&nbsp;<span style="color: #a31515;">"rd"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Case&nbsp;Else</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Return</span>&nbsp;<span style="color: #a31515;">"th"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">End</span>&nbsp;<span style="color: blue;">Select</span>
+ 
+<span style="color: blue;">End</span>&nbsp;<span style="color: blue;">Function</span></pre>
+<h2>Example Usage C#</h2>
+<pre style="font-family: Consolas; font-size: 13px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="color: blue;">string</span>&nbsp;theDate&nbsp;=&nbsp;<span style="color: blue;">string</span>.Format(<span style="color: #a31515;">"{0}{1}&nbsp;{2}"</span>,&nbsp;<span style="color: #2b91af;">DateTime</span>.Now.ToString(<span style="color: #a31515;">"dd"</span>),&nbsp;GetOrdinal(<span style="color: #2b91af;">DateTime</span>.Now.Day),&nbsp;<span style="color: #2b91af;">DateTime</span>.Now.ToString(<span style="color: #a31515;">"MMM"</span>));
+</pre>
+<h2>Example Usage VB.Net</h2>
+<pre style="font-family: Consolas; font-size: 13px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="color: blue;">Dim</span>&nbsp;theDate&nbsp;<span style="color: blue;">As</span>&nbsp;<span style="color: blue;">String</span>&nbsp;=&nbsp;<span style="color: blue;">String</span>.Format(<span style="color: #a31515;">"{0}{1}&nbsp;{2}"</span>,&nbsp;saleDate.ToString(<span style="color: #a31515;">"dd"</span>),&nbsp;GetOrdinal(saleDate.Day),&nbsp;saleDate.ToString(<span style="color: #a31515;">"MMM"</span>))
+</pre>
+<p></p>
 </div>

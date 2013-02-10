@@ -1,8 +1,42 @@
 ---
 layout: layout
-title: Contrib Youtube Orchard Field
+title: Enabling Client Side Form Validation
 ---
 
 <div class="post-wrapper">
+
+      
+            <h1>Enabling Ajax Loaded MVC 3 Views Form Validation</h1>
+    
+	
+<p>I have been getting back into some asp.net MVC 3 development again lately, and working with dynamically loaded views through Ajax.</p>
+<p>I want these views to be as "clean" as possible, and obviously not duplicate anything outside of the view. So for these reasons, I do not want to then start including any javascript files which have already been included in the Layouts or "Master" views.&nbsp;</p>
+<p>So I have my `_Layout.cshtml` page that contains the javascript files:</p>
+<pre>&lt;script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/js/libs/jquery-ui-1.8.16.custom.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/js/libs/jquery.validate.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/js/libs/jquery.unobtrusive-ajax.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/js/libs/jquery.validate.unobtrusive.min.js"&gt;&lt;/script&gt;
+</pre>
+<p>A `View` which contains a Modal popup, into which a separate `View` is loaded using jQuery Ajax. The dynamically loaded `View` contains a `Ajax.BeginForm()`, labels, fields, and validation messages. Nothing else.</p>
+<p>Going with this, your ajax dynamically loaded view containing an `Ajax.BeginForm` will NOT do any client side validation.</p>
+<p></p>
+<p>To enable client side form validation on ASP.NET MVC 3 Views which have been dynamically loaded through Ajax is simple. Just add the following.</p>
+<pre>$.validator.unobtrusive.parse("#{form-id}");</pre>
+<p>Examples below:</p>
+<pre>$.ajax
+({
+    url: "/{controller}/{action}/{id}",
+    type: "get",
+    success: function(data)
+    {
+        $.validator.unobtrusive.parse("#{form-id}");
+    }
+});
+</pre>
+<p>Alternatively</p>
+<pre>$.get('/{controller}/{action}/{id}', function (data) { $.validator.unobtrusive.parse("#{form-id}"); });
+</pre>
+<p>I am always interested in hearing back from those who read my blog. Please leave a comment if you found this useful, want to suggest any changes to my code, or anything else! Thanks!</p>
 
 </div>

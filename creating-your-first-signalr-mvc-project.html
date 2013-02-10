@@ -1,8 +1,93 @@
 ---
 layout: layout
-title: Contrib Youtube Orchard Field
+title: Creating your first SignalR Hub MVC Project
 ---
 
 <div class="post-wrapper">
 
+            <h1>Creating your first SignalR Hub MVC Project</h1>
+   
+<p>If you haven't already checked out what is going on with SignalR, then I suggest you go take a look over at Scott Hanselman's blog and read up about it&nbsp;<a href="http://www.hanselman.com/blog/archives.aspx#SignalR">http://www.hanselman.com/blog/archives.aspx#SignalR</a>&nbsp;and then go to the SignalR website and read the documentation there&nbsp;<a href="http://signalr.net/">http://signalr.net/</a>&nbsp;as it may be the solution to some of your Real-Time problems that you might come across.</p>
+<p>Here is an example of how to get SignalR running in a MVC project via Visual Studio and the NuGet package manager console.</p>
+<h2>Step 1</h2>
+<p>Create a new MVC project called "<span style="color: orange; font-weight: bold;">MySignalR</span>" ( either 3 or 4, and either an empty project or a templated project ). I will choose the Empty project for mine.&nbsp;</p>
+<h2>Step 2</h2>
+<p>Via the NuGet package manager console, type</p>
+<pre>Install-Package SignalR</pre>
+<p>This will add all the necessary files to your project (SignalR assemblies, Newtonsoft assembly, and various javascript files required). If you don't have NuGet installed in your visual studio, then visit this site for more information on how to install&nbsp;<a href="http://nuget.codeplex.com/wikipage?title=Getting%20Started">http://nuget.codeplex.com/wikipage?title=Getting%20Started</a></p>
+<h2>Step 3</h2>
+<p>You will now want to create a Hub to which will be your message "router". So create a new class, "<span style="color: orange; font-weight: bold;">SNLR.cs</span>" and add the following code:</p>
+<pre class="csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using SignalR;
+using SignalR.Hubs;
+
+namespace MySignalR
+{
+    public class SNRL : Hub
+    {
+        public void SendMessage(string msg)
+        {
+            Clients.sendMessage(msg);
+        }
+    }
+}
+</pre>
+<h2>Step 4</h2>
+<p>If you have chosen the Empty project, then you will need to create a "<span style="color: orange; font-weight: bold;">Shared</span>" folder within your "<span style="color: orange; font-weight: bold;">Views</span>" folder. Within this, then create a new View called "<span style="color: orange; font-weight: bold;">_Layout.cshtml</span>". This will be the layout for your page and will reference all the Javascript files needed.</p>
+<p>Once you have created your _Layout page, add a link to the following javascript files, so your page looks like this:</p>
+<pre class="html">@{
+&nbsp; &nbsp; Layout = null;
+}
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&nbsp; &nbsp; &lt;meta name="viewport" content="width=device-width" /&gt;
+&nbsp; &nbsp; &lt;title&gt;_Layout&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&nbsp; &nbsp; &lt;div&gt;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; @RenderBody()
+&nbsp; &nbsp; &lt;/div&gt;
+&nbsp; &nbsp; &lt;script src="~/Scripts/jquery-1.6.4.min.js"&gt;&lt;/script&gt;
+&nbsp; &nbsp; &lt;script src="~/Scripts/jquery.signalR-0.5.3.min.js"&gt;&lt;/script&gt;
+&nbsp; &nbsp; &lt;script src="~/signalr/hubs"&gt;&lt;/script&gt;
+    @RenderSection("JavaScript", false)
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<h2>Step 5</h2>
+<p>Within your Views folder, add a file called "<span style="color: orange; font-weight: bold;">_ViewStart.cshtml</span>" and add the following code:</p>
+<pre class="html">@{
+&nbsp; &nbsp; Layout = "~/Views/Shared/_Layout.cshtml";
+}</pre>
+<h2>Step 6</h2>
+<p>Create a new Empty Controller in your Controllers folder and name it "<span style="color: orange; font-weight: bold;">Home</span>". This will generate the "<span style="color: orange; font-weight: bold;">Index</span>" ActionResult, so then right click on the word "<span style="color: orange; font-weight: bold;">View();</span>" and select "Add View" making sure that you have "User a layout or master page:" selected.</p>
+<p>Add the following code to this newly created "<span style="color: orange; font-weight: bold;">Index.cstml</span>" page:</p>
+<pre class="html">@{
+&nbsp; &nbsp; ViewBag.Title = "Index";
+}
+&lt;h2&gt;Index&lt;/h2&gt;
+&lt;span id="mySpanTag"&gt;&lt;/span&gt;
+@section JavaScript{
+&nbsp; &nbsp; &lt;script&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; $(function () {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var myHub = $.connection.sNRL;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; myHub.sendMessage = function (data) {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $('#mySpanTag').html(data);
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; };
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $.connection.hub.start(function () {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; myHub.sendMessage("Hello World!");
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });
+&nbsp; &nbsp; &nbsp; &nbsp; });
+&nbsp; &nbsp; &lt;/script&gt;
+}</pre>
+<h2>Step 7</h2>
+<p>Run the project. You will see the phrase "Hello World" on the screen. This has been sent from our JavaScript code to our SNLR Hub and then sent back to our JavaScript code, which then renders it on the page. Simples!</p>
+<p>Once you have mastered the basics, you can then look into sending messages from the Hub to only the person requesting the data, or groups of users.</p>
+<p>If I find more time I will blog about these features, and maybe a more advanced demo on using SignalR with Knockoutjs.</p>
+<h3>Learning More</h3>
+<p>If you are keen to learn more, then it would be wise to follow <a href="http://twitter.com/davidfowl">@davidfowl</a> and <a href="http://twitter.com/DamianEdwards">@DamianEdwards</a> as these are the main guys behind SignalR. So any updates/changes/bugs etc... then they will probably tweet about it.</p>
+<p>Also head on over to&nbsp;<a href="http://jabbr.net/#/rooms/signalr">http://jabbr.net/#/rooms/signalr</a>&nbsp;where there are daily chats about anything and everything SignalR.</p>
 </div>

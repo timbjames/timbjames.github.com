@@ -5,6 +5,50 @@ title: Modify ASP.NET Textbox Name Attribute
 
 <div class="post-wrapper">
 
-    <h1>Test</h1>
+     
+            <h1>Modify ASP.Net TextBox Name Attribute</h1>
+          
+
+<p>I was integrating with a 3rd party API which required me to post a form to their system. Their system was pretty tight on security, and invloved creating a SHA1 signed key which was built up based on the field names and values which were being posted to the API, along with the fields and values.</p>
+<p>While testing this on a straight forward statics htm page this worked a treat. Smooth and simple.</p>
+<p>Next, I was to dynamically create everything prior to posting the form. Hit a snag right away because of .net updating all the Input Ids on the page.</p>
+<p>e.g. Id="Name" turned into ID="ct100_ContentPlaceHolder1_Name".</p>
+<p>HEY! Lets just use ClientIdMode and set it to Static!</p>
+<p>Nope. Didn't work.</p>
+<p>Why you ask? Well the ClientIdMode="Static" only changes the ID's of the control. So even though my Id was now correct, the Name attribute was still being dynamically changed. Name="ct100$ContentPlaceHolder1$Name"</p>
+<p>After a long hard fought battle with such a simple thing (If I had been using asp.net MVC this would have been simple), I came up with the below CleanNamesTextBox.</p>
+<pre style="font-family: Consolas; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="color: blue;">Public</span>&nbsp;<span style="color: blue;">Class</span>&nbsp;<span style="color: #2b91af;">CleanNamesTextBox</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Inherits</span>&nbsp;<span style="color: #2b91af;">TextBox</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Private</span>&nbsp;<span style="color: blue;">Class</span>&nbsp;<span style="color: #2b91af;">CleanNamesHtmlTextWriter</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Inherits</span>&nbsp;<span style="color: #2b91af;">HtmlTextWriter</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Sub</span>&nbsp;<span style="color: blue;">New</span>(writer&nbsp;<span style="color: blue;">As</span>&nbsp;<span style="color: #2b91af;">TextWriter</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">MyBase</span>.New(writer)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">End</span>&nbsp;<span style="color: blue;">Sub</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Public</span>&nbsp;<span style="color: blue;">Overrides</span>&nbsp;<span style="color: blue;">Sub</span>&nbsp;AddAttribute(key&nbsp;<span style="color: blue;">As</span>&nbsp;System.Web.UI.<span style="color: #2b91af;">HtmlTextWriterAttribute</span>,&nbsp;value&nbsp;<span style="color: blue;">As</span>&nbsp;<span style="color: blue;">String</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;value.Split(<span style="color: #a31515;">"$"</span>)(value.Split(<span style="color: #a31515;">"$"</span>).Length&nbsp;-&nbsp;1)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">MyBase</span>.AddAttribute(key,&nbsp;value)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">End</span>&nbsp;<span style="color: blue;">Sub</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">End</span>&nbsp;<span style="color: blue;">Class</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Protected</span>&nbsp;<span style="color: blue;">Overrides</span>&nbsp;<span style="color: blue;">Sub</span>&nbsp;Render(writer&nbsp;<span style="color: blue;">As</span>&nbsp;System.Web.UI.<span style="color: #2b91af;">HtmlTextWriter</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Dim</span>&nbsp;noNamesWriter&nbsp;<span style="color: blue;">As</span>&nbsp;<span style="color: #2b91af;">CleanNamesHtmlTextWriter</span>&nbsp;=&nbsp;<span style="color: blue;">New</span>&nbsp;<span style="color: #2b91af;">CleanNamesHtmlTextWriter</span>(writer)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">MyBase</span>.Render(noNamesWriter)
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">End</span>&nbsp;<span style="color: blue;">Sub</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Sub</span>&nbsp;<span style="color: blue;">New</span>(id&nbsp;<span style="color: blue;">As</span>&nbsp;<span style="color: blue;">String</span>,&nbsp;text&nbsp;<span style="color: blue;">As</span>&nbsp;<span style="color: blue;">String</span>,&nbsp;cssClass&nbsp;<span style="color: blue;">As</span>&nbsp;<span style="color: blue;">String</span>,&nbsp;clientIDMode&nbsp;<span style="color: blue;">As</span>&nbsp;<span style="color: #2b91af;">ClientIDMode</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">MyBase</span>.New()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Me</span>.ID&nbsp;=&nbsp;id
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Me</span>.CssClass&nbsp;=&nbsp;cssClass
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Me</span>.ClientIDMode&nbsp;=&nbsp;clientIDMode
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Me</span>.Text&nbsp;=&nbsp;text
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">End</span>&nbsp;<span style="color: blue;">Sub</span>
+ 
+<span style="color: blue;">End</span>&nbsp;<span style="color: blue;">Class</span></pre>
+<p>This generates an &lt;input&gt; element with the name attribute matching the id attribute, while also allowing you to pass in the id of the control, any css classes you wish and the text of the control.</p>
+<p>I am always interested in hearing back from those who read my blog. Please leave a comment if you found this useful, want to suggest any changes to my code, or anything else! Thanks!</p>
 
 </div>

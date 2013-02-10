@@ -1,8 +1,47 @@
 ---
 layout: layout
-title: Contrib Youtube Orchard Field
+title: MVC ActionLink with HTML Content
 ---
 
 <div class="post-wrapper">
+
+            <h1>MVC ActionLink with HTML Content</h1>
+    
+<h2>The Situation</h2>
+<p>You are wanting to utilise either Html.ActionLink or Ajax.ActionLink, but you want the link to contain HTML content. The "out of the box" helpers take in a String for the link text, and if you were to add in HTML here, it would work, however the HTML would be rendered as a string on the page.</p>
+<h2>The Solution</h2>
+<p>Create your own Helper Extension which returns a MvcHtmlString</p>
+<pre class="csharp">public static class HtmlHelperExtensions
+{
+ 
+    public static MvcHtmlString RawActionLink(this AjaxHelper ajaxHelper, string rawHtml, string action, string controller, object routeValues, AjaxOptions ajaxOptions, object htmlAttributes)
+    {
+        //string anchor = ajaxHelper.ActionLink("##holder##", action, controller, routeValues, ajaxOptions, htmlAttributes).ToString();
+        //return MvcHtmlString.Create(anchor.Replace("##holder##", rawHtml));
+        /* Updated code to use a generated guid as from the suggestion of Phillip Haydon */
+        string holder = Guid.NewGuid().ToString();
+        string anchor = ajaxHelper.ActionLink(holder, action, controller, routeValues, ajaxOptions, htmlAttributes).ToString();
+        return MvcHtmlString.Create(anchor.Replace(holder, rawHtml));
+    }
+ 
+    public static MvcHtmlString RawActionLink(this HtmlHelper htmlHelper, string rawHtml, string action, string controller, object routeValues, object htmlAttributes)
+    {
+        //string anchor = htmlHelper.ActionLink("##holder##", action, controller, routeValues, htmlAttributes).ToString();
+        //return MvcHtmlString.Create(anchor.Replace("##holder##", rawHtml));
+        /* Updated code to use a generated guid as from the suggestion of Phillip Haydon */
+        string holder = Guid.NewGuid().ToString();
+        string anchor = htmlHelper.ActionLink(holder, action, controller, routeValues, htmlAttributes).ToString();
+        return MvcHtmlString.Create(anchor.Replace(holder, rawHtml));
+    }
+ 
+}
+</pre>
+<p>Then you can create both Html.RawActionLink and Ajax.RawActionLink</p>
+<pre class="csharp">@Ajax.RawActionLink("&lt;h1&gt;Test&lt;/h1&gt;", "Index", "Home", null, null, null)
+@Html.RawActionLink("&lt;h2&gt;Test&lt;/h2&gt;", "Index", "Home", null, null)</pre>
+<p>Although, having header tags within anchor tags isn't great ;)</p>
+<p>Working example of on <a href="https://github.com/timbjames/Stacks/blob/master/Mvc4App/Helpers/HelperExtensions.cs" title="Github" target="_blank">Github</a></p>
+<p><strong>UPDATED</strong> - Using a generated Guid as a placeholder as per the suggestion from <a href="http://www.philliphaydon.com/" target="_blank">Phillip Heydon</a></p>
+<p><em><span style="color: orange; font-weight: bold;">PLEASE LEAVE COMMENTS!</span>&nbsp;</em><em>I am always interested in hearing back from those who read my blog. Please leave a comment if you found this useful, want to suggest any changes to my code, or anything else! Thanks!</em></p>
 
 </div>

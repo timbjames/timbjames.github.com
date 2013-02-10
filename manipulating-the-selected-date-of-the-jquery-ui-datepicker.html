@@ -1,8 +1,65 @@
 ---
 layout: layout
-title: Contrib Youtube Orchard Field
+title: Manipulating the selected date of the jQuery UI datepicker
 ---
 
 <div class="post-wrapper">
+ 
+            <h1>Manipulating the selected date of the jQuery UI datepicker</h1>
+    
+<p>It seems to be a common question of how do you get the day, month and year values from the jQuery UI datepicker ( and from the <a href="http://timjames.me/jquery-ui-datetimepicker-plugin" title="jQuery UI Datetimepicker" target="_blank">jQuery UI datetimepicker</a> ) on selection. You may want to separate them down into 3 stored values, or output each value into a separate textbox or span.</p>
+<h2>Solution</h2>
+<p>It is really easy to do this by taking advantage of the onSelect OR onClose event.</p>
+<pre class="javascript">&lt;script&gt;
+    $(function () {
+            
+        /* setting the dayNames and monthNames is optional. This example just shows you how you can modify them or use the defaults */
+        $('#datePicker').datepicker({
+            dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            onSelect: function (dateText) {
 
+                /* get the selected date */
+                var selectedDate = $('#datePicker').datepicker('getDate');
+
+                /* get the array of day names and month names from the date picker */
+                var dayNames = $('#datePicker').datepicker('option', 'dayNames');
+                /* default dayNames can be accessed using $.datepicker._defaults.dayNames; */
+                var monthNames = $('#datePicker').datepicker('option', 'monthNames');
+                /* default monthNames can be accessed using $.datepicker._defaults.monthNames; */
+
+                /* assign are vars */
+                var date = selectedDate.getDate();
+                var day = dayNames[selectedDate.getDay()]; // taking the day name from the array of day names 
+                var month = monthNames[selectedDate.getMonth()]; // taking the month name from the array of month names
+                var year = selectedDate.getFullYear();
+
+                /* update the ui */
+                $('#day').html(day + ' ' + date);
+                $('#month').html(month);
+                $('#year').html(year);
+
+            },
+            onClose: function (dateText) {
+                /* do something */
+            }
+        });
+    });
+&lt;/script&gt;</pre>
+<!--<pre style="font-family: Consolas; font-size: 13px; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="color: blue;">&lt;</span><span style="color: maroon;">script</span><span style="color: blue;">&gt;</span>
+$(<span style="color: maroon;">'#datePicker'</span>).datepicker({
+    onClose:&nbsp;<span style="color: blue;">function</span>&nbsp;(dateText)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;    $(<span style="color: maroon;">'#day'</span>).html(dateText.split(<span style="color: maroon;">'/'</span>)[0]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span style="color: maroon;">'#month'</span>).html(dateText.split(<span style="color: maroon;">'/'</span>)[1]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span style="color: maroon;">'#year'</span>).html(dateText.split(<span style="color: maroon;">'/'</span>)[2]);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+});
+<span style="color: blue;">&lt;/</span><span style="color: maroon;">script</span><span style="color: blue;">&gt;</span></pre>-->
+<p>Where #day, #month, and #year can be any element. In my example I am just updating the html of a span element. You can grab the code for a full working demo from my <a href="https://github.com/timbjames/Stacks/blob/master/WebApp/jquery-ui-samples/datepicker.htm" title="GitHub Working Example" target="_blank">github here</a></p>
+<p></p>
+<h3>p.s</h3>
+<p>When using jQuery and jQuery UI from a CDN make sure you have the <a href="http://timjames.me/jquery-and-jquery-ui-fallbacks" title="jQuery and jQuery UI Fallbacks">necessary fallbacks!</a></p>
+<p></p>
+<p><em><span style="color: orange; font-weight: bold;">PLEASE LEAVE COMMENTS!</span>&nbsp;</em><em>I am always interested in hearing back from those who read my blog. Please leave a comment if you found this useful, want to suggest any changes to my code, or anything else! Thanks!</em></p>
+<p></p>
 </div>

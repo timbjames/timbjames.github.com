@@ -1,8 +1,46 @@
 ---
 layout: layout
-title: Contrib Youtube Orchard Field
+title: jQuery and jQuery UI Fallbacks
 ---
 
 <div class="post-wrapper">
+
+            <h1>jQuery and jQuery UI Fallbacks</h1>
+    
+<p>If you are familiar with using Content Delivery Networks (CDNs) then you might be familiar with the situation of the CDN temporarilly going offline. In this case, any of your referenced files will not be loaded into your HTML page, which will potentially break everything.</p>
+<p>You may also be familiar with <a href="http://html5boilerplate.com/" title="HTML5 Boilerplate" target="_blank">HTML5 Boilerplate</a>, who in their default index.htm page, provide you with a great bit of javascript code to use for the default jQuery library fallback.</p>
+<pre style="font-family: Consolas; font-size: 13px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="color: blue;">&lt;</span><span style="color: maroon;">script</span>&nbsp;<span style="color: red;">src</span><span style="color: blue;">=</span><span style="color: blue;">"//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"</span><span style="color: blue;">&gt;&lt;/</span><span style="color: maroon;">script</span><span style="color: blue;">&gt;</span>
+<span style="color: blue;">&lt;</span><span style="color: maroon;">script</span><span style="color: blue;">&gt;</span>&nbsp;&nbsp;window.jQuery&nbsp;||&nbsp;document.write(<span style="color: maroon;">'&lt;script&nbsp;src="/content/js/libs/jquery-1.7.1.min.js"&gt;&lt;\/script&gt;'</span>)<span style="color: blue;">&lt;/</span><span style="color: maroon;">script</span><span style="color: blue;">&gt;</span></pre>
+<p>Here you will see that there is a reference to Googles CDN for the jQuery library, a protocol relative URL, and the fallback code. If jQuery is not loaded via the CDN, then a reference to the local file is added.</p>
+<p>The same code can then be applied when using the jQuery UI Library. I use the one supplied via the Microsoft;</p>
+<pre style="font-family: Consolas; font-size: 13px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="color: blue;">&lt;</span><span style="color: maroon;">script</span>&nbsp;<span style="color: red;">src</span><span style="color: blue;">=</span><span style="color: blue;">"//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.17/jquery-ui.min.js"</span><span style="color: blue;">&gt;&lt;/</span><span style="color: maroon;">script</span><span style="color: blue;">&gt;</span>
+<span style="color: blue;">&lt;</span><span style="color: maroon;">script</span><span style="color: blue;">&gt;</span>&nbsp;&nbsp;window.jQuery.ui&nbsp;||&nbsp;document.write(<span style="color: maroon;">'&lt;script&nbsp;src="/content/js/libs/jquery-ui-1.8.17.min.js"&gt;&lt;\/script&gt;'</span>)&nbsp;<span style="color: blue;">&lt;/</span><span style="color: maroon;">script</span><span style="color: blue;">&gt;</span></pre>
+<p>Again if the CDN library is not loaded, then just add a reference to the local file.</p>
+<h2>What about the CSS file?</h2>
+<p>If you are using a CDN reference for your javascript file, then why not do the same with the css file?</p>
+<p>A great method for a jQuery UI CSS file fallback was provided by <a href="https://twitter.com/#!/olimortimer" title="Oli Mortimer on Twitter" target="_blank">@olimortimer</a>&nbsp;(<a href="http://jsfiddle.net/olimortimer/LDYEf/" title="JSFiddle" target="_blank">JSFiddle</a>)</p>
+<p>Reference the CDN css file in your Head section</p>
+<pre style="font-family: Consolas; font-size: 13px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="color: blue;">&lt;</span><span style="color: maroon;">link</span>&nbsp;<span style="color: red;">href</span><span style="color: blue;">=</span><span style="color: blue;">"http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.17/themes/cupertino/jquery-ui.css"</span>&nbsp;<span style="color: red;">rel</span><span style="color: blue;">=</span><span style="color: blue;">"stylesheet"</span>&nbsp;<span style="color: red;">type</span><span style="color: blue;">=</span><span style="color: blue;">"text/css"</span>&nbsp;<span style="color: blue;">/&gt;</span>
+</pre>
+<p>You will need to add a single line of HTML to your page, I put it directly after the Body tag.</p>
+<pre style="font-family: Consolas; font-size: 13px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="color: blue;">&lt;</span><span style="color: maroon;">div</span>&nbsp;<span style="color: red;">class</span><span style="color: blue;">=</span><span style="color: blue;">"ui-helper-hidden"</span><span style="color: blue;">&gt;&lt;/</span><span style="color: maroon;">div</span><span style="color: blue;">&gt;</span>
+</pre>
+<p>Then after your jQuery and jQuery UI fallback coding, you could add the following;</p>
+<pre style="font-family: Consolas; font-size: 13px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="color: blue;">&lt;</span><span style="color: maroon;">script</span><span style="color: blue;">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: darkgreen;">//&nbsp;jQuery&nbsp;UI&nbsp;CSS&nbsp;Fallback</span>
+&nbsp;&nbsp;&nbsp;&nbsp;$(<span style="color: blue;">function</span>&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">if</span>&nbsp;($(<span style="color: maroon;">'.ui-helper-hidden:first'</span>).is(<span style="color: maroon;">':visible'</span>)&nbsp;===&nbsp;<span style="color: blue;">true</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(<span style="color: maroon;">'&lt;link&nbsp;rel="stylesheet"&nbsp;type="text/css"&nbsp;href="/Content/Css/jquery-ui.css"&nbsp;/&gt;'</span>).appendTo(<span style="color: maroon;">'head'</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;});
+<span style="color: blue;">&lt;/</span><span style="color: maroon;">script</span><span style="color: blue;">&gt;</span></pre>
+<p>The code checks to see if the &lt;div&gt; with the class is visible or not, if it is visible, then the CDN has failed. We can then add a reference to your local copy.</p>
+<p>Here are some handy jQuery and jQuery UI CDNs</p>
+<ul>
+<li><a href="http://code.google.com/apis/libraries/devguide.html#jquery">http://code.google.com/apis/libraries/devguide.html#jquery</a></li>
+<li><a href="http://www.asp.net/ajaxlibrary/cdn.ashx">http://www.asp.net/ajaxlibrary/cdn.ashx</a></li>
+<li><a href="http://code.jquery.com/">http://code.jquery.com/</a></li>
+</ul>
+<p><em><span style="color: orange; font-weight: bold;">PLEASE LEAVE COMMENTS!</span>&nbsp;</em><em>I am always interested in hearing back from those who read my blog. Please leave a comment if you found this useful, want to suggest any changes to my code, or anything else! Thanks!</em></p>
 
 </div>

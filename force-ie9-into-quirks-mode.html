@@ -5,4 +5,29 @@ title: Contrib Youtube Orchard Field
 
 <div class="post-wrapper">
 
+    
+    <h1>Force IE9 into Quirks Mode</h1>
+    	
+<p>Just a quick one, but something I only noticed recently.</p>
+<p>Adding any HTML comment block above your &lt;!doctype html&gt; tag will throw IE9 into Quirks Mode!</p>
+<pre class="html">&lt;!-- --&gt;
+&lt;!DOCTYPE html&gt;
+ 
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;QuirksMode&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        Quirks Mode
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>HA!</p>
+<p>Now I know this isn't good HTML markup anyway, but at times I add comment blocks while debugging my code, e.g</p>
+<pre>Response.Write("&lt;!-- " &amp; someVariable &amp; " --&gt;")</pre>
+<p>99% of the time I have never seen a problem with this, but one project completely threw me as the web page with this comment block looked completely broken in IE9. I sent hours inspecting the DOM in Chrome, Firefox, Opera, IE, updating the HTML/CSS, everything I could think of to find out why the page was broken. Eventually I let a fresh set of eyes look at the problem, and straight away he said "Maybe the comment blocks at the top are affecting it?"</p>
+<p>Sure enough!</p>
+<p><i>If you found this blog post useful in anyway, or would like to make any suggestions, then please leave a comment! I would greatly appreciate it!</i></p>
+
 </div>

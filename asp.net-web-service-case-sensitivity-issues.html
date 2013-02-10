@@ -1,8 +1,30 @@
 ---
 layout: layout
-title: Contrib Youtube Orchard Field
+title: ASP.Net Web Service Case Sensitivity Issues
 ---
 
 <div class="post-wrapper">
+
+    
+    <h1>Asp.Net Web Service Case Sensitivity Issues</h1>
+    	
+    <p>I have been building Asp.Net Web Services (.asmx) for a while now, and never run into this issue before.</p>
+    <pre>System.ArgumentException: Invalid method name 'helloworld', &nbsp;method names are case sensitive. &nbsp; The method name 'HelloWorld' with the same name but different casing was found.
+    Parameter name: methodName
+    &nbsp; &nbsp;at System.Web.Services.Protocols.HttpServerProtocol.Initialize()
+    &nbsp; &nbsp;at System.Web.Services.Protocols.ServerProtocol.SetContext(Type type, HttpContext context, HttpRequest request, HttpResponse response)
+    &nbsp; &nbsp;at System.Web.Services.Protocols.ServerProtocolFactory.Create(Type type, HttpContext context, HttpRequest request, HttpResponse response, Boolean&amp; abortProcessing)
+    </pre>
+    <p>This happens when invoking the web service method directly from the browser when testing. If you call the service via Scripts everything works fine.</p>
+    <p>A solution to this problem is to give the methods a <strong>MessageName</strong></p>
+    <pre style="font-family: Consolas; font-size: 13px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;">&lt;<span style="color: #2b91af;">WebMethod</span>(MessageName:=<span style="color: #a31515;">"helloworld"</span>)&gt;&nbsp;_
+    <span style="color: blue;">Public</span>&nbsp;<span style="color: blue;">Function</span>&nbsp;HelloWorld()&nbsp;<span style="color: blue;">As</span>&nbsp;<span style="color: blue;">String</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">Return</span>&nbsp;<span style="color: #a31515;">"Hello&nbsp;World"</span>
+    <span style="color: blue;">End</span>&nbsp;<span style="color: blue;">Function</span></pre>
+    <p>The only different is that you are putting the <strong>MessageName</strong> property in lowercase.</p>
+    <p>Seems to fix the problem, not sure what causes the problem, so I will look into it more.</p>
+    <p></p>
+    <p>I am always interested in hearing back from those who read my blog. Please leave a comment if you found this useful, want to suggest any changes to my code, or anything else! Thanks!</p>
+	
 
 </div>

@@ -5,4 +5,46 @@ title: Contrib Youtube Orchard Field
 
 <div class="post-wrapper">
 
+     
+            <h1>jQuery UI Datetimepicker plugin</h1>
+   
+        
+
+<p>I have been making good use of a jQuery UI plugin called <a href="http://trentrichardson.com/examples/timepicker/" title="Trent Richardson Datetimepicker" target="_blank">datetimepicker</a>&nbsp;developed by Trent Richardson.</p>
+<p>It works with the existing jQuery UI <a href="http://jqueryui.com/demos/datepicker/" title="jQuery UI datepicker" target="_blank">datepicker</a>&nbsp;(&nbsp;which means that not only do you get a fully functional and tested calendar but also the numerous themes which are available ), and adds an hour and minute selector below the calendar.</p>
+<p>In this example, I am using the latest version of jQuery (currently 1.7), jQuery UI (currently 1.8.16) and the jQuery UI theme Hot-Sneaks, all delivered via the <a href="http://www.asp.net/ajaxlibrary/cdn.ashx" title="asp.net CDN" target="_blank">asp.net CDN</a>. ( Make sure you use <a href="http://timjames.me/jquery-and-jquery-ui-fallbacks" title="jQuery and jQuery UI Fallbacks">Fallbacks</a> when delivering content from a CDN)</p>
+<p>Include these in the &lt;head&gt;&lt;/head&gt;or just before &lt;/body&gt; of your html.</p>
+<pre class="javascript">&lt;script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"&gt;&lt;/script&gt;
+&lt;script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.16/jquery-ui.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.16/themes/hot-sneaks/jquery-ui.css" /&gt;
+&lt;script src="pathtojs/jquery-ui-timepicker-addon.js"&gt;&lt;/script&gt;</pre>
+<p>There is also a small bit of css which you need to add along with the plugin.</p>
+<pre class="css">.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+.ui-timepicker-div dl{ text-align: left; }
+.ui-timepicker-div dl dt{ height: 25px; }
+.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }</pre>
+<p>The default usage is to use an &lt;input&gt; on your page which will open and be populated by the datetimepicker.</p>
+<pre class="html">&lt;input type="text" id="selectedDateTime" /&gt;</pre>
+<p>Then simply call the function once your document has loaded.</p>
+<pre class="javascript">$(function() { $('#selectedDateTime').datetimepicker(); });</pre>
+<p>demo - Select Date/Time:&nbsp;<input type="text" id="selectedDateTime" /></p>
+<p>As with most good plugins, they have a load of options which you can change. So if you want to change the date and time format, then it is really easy to do.</p>
+<pre class="javascript">$('#selectedDateTimeWithFormat').datetimepicker({ dateFormat: 'dd-mm-yy', timeFormat: 'hh:mm:ss' });</pre>
+<p>demo - Select Date/Time&nbsp;<input type="text" id="selectedDateTimeWithFormat" /></p>
+<p>With a extra styles to overwrite some existing jQuery UI styling, you can change the sizing to fit your needs. In my example I have just left it as is.</p>
+<p>Want to make use the selected date and time from the datetimepicker plugin? Take a look at "<a href="Manipulating%20the%20selected%20date%20of%20the%20jQuery%20UI%20datepicker" title="Manipulating the selected date of the jquery ui datepicker">Manipulating the selected date of the jQuery UI datepicker</a>".</p>
+<p style="color: orange;"><strong>Please Comment!</strong></p>
+<p>I am always interested in hearing back from those who read my blog. Please leave a comment if you found this useful, want to suggest any changes to my code, or anything else! Thanks!</p>
+<h2 style="color: orange;">Update!</h2>
+<p>I have added this example to my github, <a href="https://github.com/timbjames/Stacks/blob/master/WebApp/jquery-ui-samples/datetimepicker.htm" title="Github Demo 1" target="_blank">check it out!</a></p>
+<script type="text/javascript" src="/themes/timjames.me/scripts/libs/jquery-ui-timepicker.js"></script>
+<p><link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.16/themes/hot-sneaks/jquery-ui.css" /></p>
+<script type="text/javascript">
+$(function(){
+    $('#selectedDateTime').datetimepicker();
+    $('#selectedDateTimeWithFormat').datetimepicker({ dateFormat: 'dd-mm-yy', timeFormat: 'hh:mm:ss' });
+});
+</script>
+
 </div>

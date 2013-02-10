@@ -1,8 +1,41 @@
 ---
 layout: layout
-title: Contrib Youtube Orchard Field
+title: jQuery Ajax get request in IE
 ---
 
 <div class="post-wrapper">
+
+     
+            <h1>jQuery Ajax get request in IE</h1>
+            
+
+	
+<p>I am probably one of these developers that falls into this trap over and over again because I never use IE personally and actually hate it with a passion.</p>
+<h3>Things not working fully in IE</h3>
+<p>I do test in IE for the majority of things, especially layout as this is what everyone will notice first, but there are some things which I forget to test because I asume that as they are working in Chrome/Firefox/Opera/Safari/Mobile Browsers that they would work in IE.</p>
+<p>This happened to me recently while developing a cross site scripting widget which would allow for 3rd parties to add reference a javascript file from our server, then it would do some fancy stuff and read a page on our server.</p>
+<p>The script would use jQuery's Ajax Get method to read the contents from an ASP.NET web page (.aspx), so not a web service or WCF service, just a web page that would output the response in HTML.</p>
+<p>I had tested everything locally, and then tested in the live environment. Everything was working as far as I was aware, until I was notifed out the IE issue. To me the problem was not with my code, but with versions of the jQuery library or other IE bugs on this third party website. Eventually I identified the problem.&nbsp;</p>
+<pre style="font-family: Consolas; font-size: 13px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;">$.get(url,&nbsp;<span style="color: blue;">function</span>&nbsp;(data)&nbsp;{&nbsp;});&nbsp;<span style="color: darkgreen;">//&nbsp;cross&nbsp;site</span>
+</pre>
+<p>Doesn't work in IE. Eventually after a lot of searching and going off on wild goose chases I found the solution. <strong>XDomainRequest()</strong></p>
+<pre style="font-family: Consolas; font-size: 13px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="color: darkgreen;">//&nbsp;check&nbsp;for&nbsp;IE&nbsp;browser</span>
+<span style="color: blue;">if</span>&nbsp;($.browser.msie&nbsp;&amp;&amp;&nbsp;window.XDomainRequest)&nbsp;{
+    <span style="color: darkgreen;">//&nbsp;Use&nbsp;Microsoft&nbsp;XDR</span>
+&nbsp;&nbsp;&nbsp; <span style="color: blue;">var</span>&nbsp;xdr&nbsp;=&nbsp;<span style="color: blue;">new</span>&nbsp;XDomainRequest();
+&nbsp;&nbsp;&nbsp; xdr.contentType&nbsp;=&nbsp;<span style="color: maroon;">"text/plain"</span>;
+&nbsp;&nbsp;&nbsp; xdr.open(<span style="color: maroon;">"get"</span>,&nbsp;url);
+&nbsp;&nbsp;&nbsp; xdr.onload&nbsp;=&nbsp;<span style="color: blue;">function</span>&nbsp;()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;   <span style="color: darkgreen;">//&nbsp;handle&nbsp;response&nbsp;via&nbsp;xdr.responseText</span>
+&nbsp;&nbsp;&nbsp; };
+&nbsp;&nbsp;&nbsp; xdr.send();
+&nbsp;}&nbsp;<span style="color: blue;">else</span>&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;    <span style="color: darkgreen;">//&nbsp;good&nbsp;browser&nbsp;:P&nbsp;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$.get(url,&nbsp;<span style="color: blue;">function</span>&nbsp;(data)&nbsp;{&nbsp;});&nbsp;<span style="color: darkgreen;">//&nbsp;cross&nbsp;site</span>
+&nbsp;}</pre>
+<p>This is a simple solution which checks if the client browser is IE and then uses <strong>XDomainRequest()</strong>. On the ASP.NET page side I had to add</p>
+<pre style="font-family: Consolas; font-size: 13px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: white; background-position: initial initial; background-repeat: initial initial;">Response.AppendHeader(<span style="color: #a31515;">"Access-Control-Allow-Origin"</span>,&nbsp;<span style="color: #a31515;">"*"</span>)
+</pre>
+<p>In order to allow the request.</p>
 
 </div>
