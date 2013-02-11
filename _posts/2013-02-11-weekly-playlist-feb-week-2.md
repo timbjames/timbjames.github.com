@@ -9,6 +9,8 @@ tags:
 category: blog
 images:
 - /media/playlists/stevie-wonder.gif
+- /media/playlists/sam_and_dave.png
+- /media/playlists/edwin_starr.jpg
 - /media/playlists/james_brown_2.jpg
 ---
 
@@ -19,6 +21,8 @@ This week I have mostly been listening to some classic Motown and Soul music.
 
 ###No 2
 ####Sam & Dave - Soul Man
+
+<!--excerpt-->
 
 ###No 3
 ####Booker T. & The MG's - Green Onions
