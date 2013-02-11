@@ -58,6 +58,10 @@ $(function ($) {
         //go
 
     });
+
+    /* pretty photo */
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+
 })
 
 
