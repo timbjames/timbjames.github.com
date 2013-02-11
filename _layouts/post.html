@@ -29,6 +29,29 @@ layout: layout
     </div>
     {% endif %}
 
+    {% if page.images %}
+    <div id="myCarousel" class="carousel slide">        
+        <div class="carousel-inner">
+            {% for img in page.images %}
+            <div class="active item">
+                <a href="{{ img }}" rel="prettyPhoto[pp_gal]"><img src="{{ img }}" /></a>
+            </div>
+            {% endfor %}
+            <!--<div class="active item">
+                <a href="img/014-930x604.jpg" rel="prettyPhoto[pp_gal]" title="You can add caption to pictures."><img src="img/014-930x604.jpg"></a>
+            </div>
+            <div class="item">
+                <a href="img/beautiful-young-girl-930x673.jpg" rel="prettyPhoto[pp_gal]" title="You can add caption to pictures."><img src="img/beautiful-young-girl-930x673.jpg"></a>
+            </div>
+            <div class="item">
+                <a href="img/adventure-930x620.jpg" rel="prettyPhoto[pp_gal]" title="You can add caption to pictures."><img src="img/adventure-930x620.jpg"></a>
+            </div>-->
+        </div>
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
+    </div>
+    {% endif %}
+
     <h3>{{page.title}} <i class="icon-link"></i></h3>
 
     {{ content }}
