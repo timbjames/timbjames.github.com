@@ -34,7 +34,7 @@ title: tim james blog
     {% if post.images %}
     <div id="myCarousel" class="carousel slide">        
         <div class="carousel-inner">                         
-            {% for img in page.images %}                       
+            {% for img in post.images %}                       
             <div class="item">
                 <a href="{{ img }}" rel="prettyPhoto[pp_gal]"><img src="{{ img }}" /></a>
             </div>           
