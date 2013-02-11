@@ -1,7 +1,11 @@
 ---
-layout: default
+layout: layout
 title: Archive
 ---
+
+
+<div class="post-wrapper">
+
 <h1>Archive</h1>
 {% for post in site.posts %}
     {% capture postmonth %}{{ post.date | date: "%B" }}{% endcapture %}
@@ -20,3 +24,80 @@ title: Archive
   <li><a href="{{ post.url | remove:'.html' }}">{{ post.title }}</a> ({{ post.date | date_to_string }})</li>
 {% endfor %}
 </ul>
+
+</div>
+
+<div class="post-wrapper">
+
+    <h2>Older</h2>
+
+    <ul>
+        <li>
+            <a href="/creating-your-first-signalr-mvc-project" title="">Creating your first SignalR MVC Project</a>
+        </li>
+        <li>
+            <a href="/the-cake-is-not-a-lie" title="">The Cake is not a lie</a>
+        </li>
+        <li>
+            <a href="/feed-the-good-wolf" title="">Feed the good Wolf</a>
+        </li>
+        <li>
+            <a href="/manipulating-the-selected-date-of-the-jquery-ui-datepicker" title="">Manipulating the selected date of the jQuery UI datepicker</a>
+        </li>
+        <li>
+            <a href="/top-5-eu-cookie-acceptance-messages" title="">Top 5 EU Cookie acceptance messages</a>
+        </li>
+        <li>
+            <a href="/add-ordinal-suffix-to-formatted-datetime-string" title="">Add ordinal suffic to formatted datetime string</a>
+        </li>
+        <li>
+            <a href="/asp.net-checkboxlist-missing-value-attribute" title="">ASP.Net Checkboxlist missing value attribute</a>
+        </li>
+        <li>
+            <a href="/mvc-actionlink-with-html-content" title="">MVC Action link with HTML content</a>
+        </li>
+        <li>
+            <a href="/having-fun-with-incredibox" title="">Having fun with Incredibox</a>
+        </li>
+        <li>
+            <a href="/asp-net-maxhttpcollectionkeys-in-app-config" title="">ASP.Net MaxHttpCollectionKeys in App.config</a>
+        </li>
+        <li>
+            <a href="/jquery-and-jquery-ui-fallbacks" title="">jQuery and jQuery UI Fallbacks</a>
+        </li>
+        <li>
+            <a href="/mvc-3-password-length-dataannotation" title="">MVC 3 Password Length DataAnnotation</a>
+        </li>
+        <li>
+            <a href="/jquery-ajax-get-request-in-ie" title="">jQuery Ajax GET request in IE</a>
+        </li>
+        <li>
+            <a href="/force-ie9-into-quirks-mode" title="">Force IE9 into quirks mode</a>
+        </li>
+        <li>
+            <a href="/enabling-client-side-form-validation" title="">Enabling client side form validation</a>
+        </li>
+        <li>
+            <a href="/modify-asp.net-textbox-name-attribute" title="">Modify ASP.Net TextBox name attribute</a>
+        </li>
+        <li>
+            <a href="/jquery-ui-datetimepicker-plugin" title="">jQuery UI datetimepicker plugin</a>
+        </li>
+        <li>
+            <a href="/marc-martel-nessun-dorma" title="">Marc Martel Nessun Dorma</a>
+        </li>
+        <li>
+            <a href="/asp.net-web-service-case-sensitivity-issues" title="">ASP.Net Web Service case sensitivity issues</a>
+        </li>
+        <li>
+            <a href="/render-asp.net-controls-without-form-tag" title="">Render ASP.Net controls without form tag</a>
+        </li>
+        <li>
+            <a href="/contrib-youtube-orchard-field" title="">Contrib YouTube Orchard field</a>
+        </li>
+        <li>
+            <a href="/marc-freddi-mercury-martel" title="">Marc "Freddi Mercury" Martel</a>
+        </li>
+    </ul>
+
+</div>
