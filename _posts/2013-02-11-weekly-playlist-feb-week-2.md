@@ -10,7 +10,7 @@ category: blog
 images:
 - /media/playlists/stevie-wonder.gif
 - /media/playlists/sam_and_dave.png
-- /media/playlists/edwin_starr.jpg
+- /media/playlists/es.jpg
 - /media/playlists/james_brown_2.jpg
 ---
 
