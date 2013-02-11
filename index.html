@@ -34,20 +34,20 @@ title: tim james blog
     {% if post.images %}
     <div id="myCarousel" class="carousel slide">        
         <div class="carousel-inner">
-            {% assign counter=0 %}
+            <!--{% assign counter=0 %}
             {% for img in post.images %}
-            {% if counter == 0 %}                
-                 <div class="active item">
+            {% if counter == 0 %}-->                
+            <div class="active item">
                 <a href="{{ img }}" rel="prettyPhoto[pp_gal]"><img src="{{ img }}" /></a>
             </div>
-            {% endif %}
+            <!--{% endif %}
             {% if counter > 0 %} 
             <div class="active">
                 <a href="{{ img }}" rel="prettyPhoto[pp_gal]"><img src="{{ img }}" /></a>
             </div>
             {% endif %}
             {% capture counter %}{{ counter | plus:1 }}{% endcapture %} 
-            {% endfor %}          
+            {% endfor %}-->          
         </div>
         <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
         <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
