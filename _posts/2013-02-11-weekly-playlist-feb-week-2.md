@@ -1,12 +1,11 @@
 ---
 layout: post
-published: false
 title: Weekly Playlist - February Week Two
 location: Glasgow
 author: Tim James
 tags:
-- github
-- jekyll
+- music
+- random
 category: blog
 images:
 - /media/playlists/stevie-wonder.gif
