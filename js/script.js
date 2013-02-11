@@ -19,18 +19,18 @@ $(function ($) {
     });
 
     /* get flickr feed */
-    /* 84100512@N02 */  
+    /* 84100512@N02 */
     //$.getJSON("http://api.flickr.com/services/feeds/groups_pool.gne?id=84100512@N02&lang=en-us&format=json&jsoncallback=?",  
     $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
     {
-          tags: "mount rainier",
-          tagmode: "any",
-          format: "json"
-      },        
+        tags: "mount rainier",
+        tagmode: "any",
+        format: "json"
+    },
       function (data) {
           var $li, $a, $img;
           $.each(data.items, function (i, item) {
-              $li = $('<li />').append($('<a />', { attr: { href: item.link } }).append($('<img />', { attr: { alt: item.title, src: item.media.m.replace("_m.jpg", "_s.jpg") } })));
+              $li = $('<li />').append($('<a />', { attr: { href: item.link} }).append($('<img />', { attr: { alt: item.title, src: item.media.m.replace("_m.jpg", "_s.jpg")} })));
               $li.appendTo("#flickr-feed");
               //<li><a href="" title=""><img alt="Flickr" src="/img/6795452380_3ffa150da3_s.jpg"></a></li>
               //$("<img/>").attr("src", item.media.m).appendTo("#flickr-feed");
@@ -60,7 +60,10 @@ $(function ($) {
     });
 
     /* pretty photo */
-    $("a[rel^='prettyPhoto']").prettyPhoto();
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+    $('.carousel').each(function (index, item) {
+        $(this).find('.item').get(0).addClass('active');
+    });
 
 })
 
