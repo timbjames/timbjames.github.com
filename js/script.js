@@ -62,7 +62,7 @@ $(function ($) {
     /* pretty photo */
     $("a[rel^='prettyPhoto']").prettyPhoto();
     $('.carousel').each(function (index, item) {
-        $(this).find('.item').get(0).addClass('active');
+        $(item).find('.item').get(0).addClass('active');
     });
 
 })
