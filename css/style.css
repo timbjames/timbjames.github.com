@@ -225,6 +225,10 @@ ul.meta {
 .carousel-control {
     top: 50%;
 }
+.carousel .item{
+    max-height: 380px;
+    overflow: hidden;
+}
 .image-type {
     position: relative;
 }
