@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Testing Github Pages with Jekyll
+title: Portfolio One
 location: Glasgow
 author: Tim James
 tags:
-- testing
+- portfolio
 category: portfolio
-video_url: http://www.youtube.com/embed/jPhkfk8EBsI?rel=0&showinfo=0&autohide=1hd=1&wmode=transparent
+image_url: /img/blond-boxing-woman-in-black-punching-bag-930x620.jpg
+image_alt: This is the Alt Text
+portfolio_tag: kingfisher
 ---
-
-Another test video url http://player.vimeo.com/video/2639782
 
 This is a portfolio post
 
