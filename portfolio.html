@@ -18,9 +18,9 @@ title: tim james portfolio
 
 <div class="portfolio-margin">
     
-    {% for post in site.categories.portfolio limit:10 %}
-    
     <div id="portfolio-container" style="position: relative; overflow: hidden; height: 1194px;" class="isotope">
+    
+        {% for post in site.categories.portfolio limit:10 %}    
         
         <div class="portfolio portfolio-main {{ post.portfolio_tag }} isotope-item" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); opacity: 1;">
             
@@ -40,9 +40,9 @@ title: tim james portfolio
             </div>
 
         </div>
-        
-    </div>
+            
+        {% endfor %}
 
-    {% endfor %}
+    </div>
 
 </div>
