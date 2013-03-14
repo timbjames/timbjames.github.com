@@ -16,25 +16,25 @@ images:
 
 This week I have mostly been listening to some classic Motown and Soul music. 
 
-###No 1
-####Stevie Wonder - Superstition
+##No 1
+###Stevie Wonder - Superstition
 
-###No 2
-####Sam & Dave - Soul Man
+##No 2
+###Sam & Dave - Soul Man
 
 <!--excerpt-->
 
-###No 3
-####Booker T. & The MG's - Green Onions
+##No 3
+###Booker T. & The MG's - Green Onions
 
-###No 4
-####Edwin Star - War
+##No 4
+###Edwin Star - War
 
-###No 5
-####James Brown - It's A Man's World
+##No 5
+###James Brown - It's A Man's World
 
-###No 6
-####Otis Redding - My Girl
+##No 6
+###Otis Redding - My Girl
 
-###Bonus Song!
-####Barry White - You're The First, The last, My Everything
+##Bonus Song!
+###Barry White - You're The First, The last, My Everything
