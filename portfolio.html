@@ -11,9 +11,8 @@ title: tim james portfolio
 <div id="filters">
     <ul class="breadcrumb">
         <li><a href="#" data-filter="*">All</a> <span class="divider">/</span></li>
-        <li><a href="#" data-filter=".art">Art</a> <span class="divider">/</span></li>
-        <li><a href="#" data-filter=".creative">Creative</a> <span class="divider">/</span></li>
-        <li><a href="#" data-filter=".entertainment">Entertainment</a></li>
+        <li><a href="#" data-filter=".kingfisher">Kingfisher Systems</a> <span class="divider">/</span></li>
+        <li><a href="#" data-filter=".freelance">Freelance</a></li>
     </ul>
 </div>
 
@@ -30,14 +29,14 @@ title: tim james portfolio
                 <a href="{{ post.image_url }}" rel="prettyPhoto" title="{{ post.image_alt }}"><img src="{{ post.image_url }}" alt="#" /></a>
                 <div class="portfolio-zoom"><i class="icon-zoom-in icon-large"></i></div>
                 <div class="portfolio-caption">
-                    <h5><a href="{{ post.url | remove:'.html' }}">Justo Porta</a></h5>
-                    <p><a href="">Web Design</a></p>
+                    <h5><a href="{{ post.url | remove:'.html' }}">Wilsons Timed Auction</a></h5>
+                    <p><a href="#">Kingfisher Systems</a></p>
                 </div>
 
             </div>
 
             <div class="portfolio-description">  
-                {{ post.content }}
+                {{ post.content | split:'<!--excerpt-->' | first }}
             </div>
 
         </div>
