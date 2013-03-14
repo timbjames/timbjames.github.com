@@ -209,7 +209,8 @@ ul.meta {
   overflow: hidden;
 }
 .post-wrapper .post-title {
-    font-size: 22px;
+    /* changed post-title to match h1 tags */
+    font-size: 30px;
     font-weight: bold;
     line-height: 30px;
     color: rgb(51, 57, 58);
