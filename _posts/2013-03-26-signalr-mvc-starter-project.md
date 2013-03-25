@@ -6,11 +6,6 @@ author: Tim James
 tags:
 - signalr
 category: blog
-video_url: http://www.youtube.com/embed/8gQGHCvMzs8?rel=0&showinfo=0&autohide=1hd=1&wmode=transparent
-image_url: /img/blond-boxing-woman-in-black-punching-bag-930x620.jpg
-image_alt: this is the image alt
-image_caption: This is the caption
-image_text: This is the caption text
 ---
 
 If you haven't already checked out what is going on with SignalR, then I suggest you go take a look over at Scott Hanselman's blog and read up about it http://www.hanselman.com/blog/archives.aspx#SignalR and then go to the SignalR website and read the documentation there http://signalr.net/ as it may be the solution to some of your Real-Time problems that you might come across.
@@ -18,3 +13,34 @@ If you haven't already checked out what is going on with SignalR, then I suggest
 <!--excerpt-->
 
 > ASP.NET SignalR is a new library for ASP.NET developers that makes it incredibly simple to add real-time web functionality to your applications. What is "real-time web" functionality? It's the ability to have your server-side code push content to the connected clients as it happens, in real-time.
+
+##Starters
+
+I have written a very basic tutorial which will help you get going when you are working with an MVC application and want to integrate SignalR.
+
+##Step 1
+
+Open up Visual Studio and create a new MVC 4 project. Name it what ever you like, apart from _SignalR_ If you name it this, then you run into problems with namespaces.
+
+##Step 2
+
+Install the Microsoft AspNet SignalR project via NuGet Package Manager Console.
+
+`Install-Package Microsoft.Aspnet.SignalR`
+
+This will add all the necessary files to your project (SignalR assemblies, Newtonsoft assembly, and various javascript files required). If you don't have NuGet installed in your visual studio, then visit this site for more information on how to install http://nuget.codeplex.com/wikipage?title=Getting%20Started
+
+##Step 3
+
+You will now want to create a Hub to which will be your message "router". So create a new class, I have named mine "SNLR.cs", and add the following code:
+
+`namespace MySignalR
+{
+    public class SNRL : Hub
+    {
+        public void SendMessage(string msg)
+        {
+            Clients.sendMessage(msg);
+        }
+    }
+}`
