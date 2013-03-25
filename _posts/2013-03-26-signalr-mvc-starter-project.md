@@ -34,13 +34,39 @@ This will add all the necessary files to your project (SignalR assemblies, Newto
 
 You will now want to create a Hub to which will be your message "router". So create a new class, I have named mine "SNLR.cs", and add the following code:
 
-`namespace MySignalR
-{
-    public class SNRL : Hub
+    namespace MySignalR
     {
-        public void SendMessage(string msg)
+        public class SNRL : Hub
         {
-            Clients.sendMessage(msg);
+            public void SendMessage(string msg)
+            {
+                Clients.sendMessage(msg);
+            }
         }
     }
-}`
+
+##Step 4
+
+If you have chosen the Empty project, then you will need to create a "Shared" folder within your "Views" folder. Within this, then create a new View called "_Layout.cshtml". This will be the layout for your page and will reference all the Javascript files needed.
+
+Once you have created your _Layout page, add a link to the following javascript files, so your page looks like this:
+
+    @{
+        Layout = null;
+    }
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>_Layout</title>
+    </head>
+    <body>
+        <div>        
+            @RenderBody()
+        </div>
+        <script src="~/Scripts/jquery-1.6.4.min.js"></script>
+        <script src="~/Scripts/jquery.signalR-0.5.3.min.js"></script>
+        <script src="~/signalr/hubs"></script>
+        @RenderSection("JavaScript", false)
+    </body>
+    </html>
