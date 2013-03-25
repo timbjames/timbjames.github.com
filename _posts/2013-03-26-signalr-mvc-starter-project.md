@@ -1,6 +1,5 @@
 ---
 layout: post
-published: false
 title: Creating Your First SignalR Project
 location: Glasgow
 author: Tim James
