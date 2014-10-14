@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: CSS image captions
 location: Glasgow
 author: Tim James
