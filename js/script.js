@@ -4,7 +4,7 @@
 $(function ($) {
 
     /* get twitter feed */
-    $("#twitter-feed").getTwitter({
+    /*$("#twitter-feed").getTwitter({
         userName: "timbjames",
         numTweets: 5,
         loaderText: "Loading tweets...",
@@ -16,7 +16,7 @@ $(function ($) {
         showTimestamp: true,
         includeRetweets: false,
         excludeReplies: true
-    });
+    });*/
 
     /* get flickr feed */
     /* 84100512@N02 */
