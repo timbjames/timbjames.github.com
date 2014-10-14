@@ -1,6 +1,5 @@
 ﻿---
 layout: post
-published: true
 title: Knockoutjs default if empty
 location: Glasgow
 author: Tim James
