@@ -1,10 +1,11 @@
 ﻿---
 layout: post
-title: Knockoutjs default if empty
+published: true
+title: Archived blog posts
 location: Glasgow
 author: Tim James
 tags:
-- knockoutjs
+- archive
 category: blog
 ---
 
