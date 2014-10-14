@@ -52,10 +52,11 @@ title: tim james blog
     <hr>
 
     <ul class="meta">
-	    <li class="post-date"><i class="icon-calendar"></i><a href="">{{ post.date | date_to_string }}</a></li>
-        <li><i class="icon-user"></i><a href="" title="Posts by admin" rel="author">{{ post.author }}</a></li>
-        <li><i class="icon-list"></i><a href="{{ post.url | remove:'.html' | append:'/#more' }}">Read more...</a><!--<a href="" title="View all posts in link" rel="category tag">Link</a>--></li>
-        <li><i class="icon-comment"></i><a href="">1 Comments</a></li>
+	    <li class="post-date"><i class="icon-calendar"></i><a href="{{ post.url | remove:'.html' }}">{{ post.date | date_to_string }}</a></li>
+        <!--<li><i class="icon-user"></i><a href="" title="Posts by admin" rel="author">{{ post.author }}</a></li>-->
+        <li><i class="icon-list"></i><a href="{{ post.url | remove:'.html' | append:'/#more' }}">Read more...</a>
+            <!--<a href="" title="View all posts in link" rel="category tag">Link</a>--></li>
+        <li><i class="icon-comment"></i><a href="{{ post.url | remove:'.html' }}#disqus_thread">1 Comments</a></li>
     </ul>  
     
     <ul class="tags">      
