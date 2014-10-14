@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 published: true
 title: Archived blog posts
