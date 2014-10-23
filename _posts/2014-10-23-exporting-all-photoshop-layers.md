@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Exporting all Photoshop layers as Jpeg
 location: Glasgow
 author: Tim James
