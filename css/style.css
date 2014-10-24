@@ -706,6 +706,10 @@ ul.meta {
   POST ADDITIONALS
    ========================================================================== */
 
+.caption{
+    position: relative;
+}
+
 .caption:after{
     content: attr(title);
     position: absolute;
