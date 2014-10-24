@@ -62,3 +62,9 @@ Easy CSS image captions using `:after` and the `attr` attribute.
         display: block;
     }
 </style>
+
+**aww sad Bill Murray!**
+
+*Please note my blog is applying additional styles to the image on hover!*
+
+As usual please let me know what you think about my blog, my posts, content, and style. Leave a comment below!
