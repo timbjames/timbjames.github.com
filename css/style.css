@@ -533,7 +533,7 @@ ul.meta {
     float: right;
 }
 #social-icons-large ul{
-    float: left;
+    float: none;
 }
 	
 /*#social-icons-small li a.twitter-link, #social-icons-large li a.twitter-link { background-position: -8px -8px; }
@@ -552,7 +552,7 @@ ul.meta {
 #social-icons-small li a.rss-link, #social-icons-large li a.rss-link { background-position: 50% -260px; }
 #social-icons-small li a.linkedin-link, #social-icons-large li a.linkedin-link { background-position: 5px -294px; }
 #social-icons-small li a.google-link, #social-icons-large li a.google-link { background-position: 5px -343px; }  
-#social-icons-small li a.so-link, #social-icons-large li a.so-link{ background-position: 5px -343px; }       
+#social-icons-small li a.so-link, #social-icons-large li a.so-link{ background-position: 5px -390px; }       
 #social-icons-small li a.so-link img, #social-icons-large li a.so-link img{ display: none; }
 
 
