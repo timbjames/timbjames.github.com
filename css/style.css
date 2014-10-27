@@ -506,7 +506,7 @@ ul.meta {
     height: 30px;
     display: block;
     text-indent: -9999px;
-    background-image: url(/img/social_icons_small.png);
+    background-image: url(/img/social_icons_small-2.png);
     background-repeat: no-repeat;
     border: 2px solid rgb(34, 40, 41);
     border-radius: 30px;
@@ -536,16 +536,25 @@ ul.meta {
     float: left;
 }
 	
-#social-icons-small li a.twitter-link, #social-icons-large li a.twitter-link { background-position: -8px -8px; }
+/*#social-icons-small li a.twitter-link, #social-icons-large li a.twitter-link { background-position: -8px -8px; }
 #social-icons-small li a.facebook-link, #social-icons-large li a.facebook-link { background-position: 50% -60px; }
 #social-icons-small li a.dribbble-link, #social-icons-large li a.dribbble-link { background-position: 50% -110px; }
 #social-icons-small li a.vimeo-link, #social-icons-large li a.vimeo-link { background-position: 50% -158px; }
 #social-icons-small li a.flickr-link, #social-icons-large li a.flickr-link { background-position: 50% -210px; }
 #social-icons-small li a.rss-link, #social-icons-large li a.rss-link { background-position: 50% -260px; }
 #social-icons-small li a.linkedin-link, #social-icons-large li a.linkedin-link { background-position: 50% -310px; }
-#social-icons-small li a.google-link, #social-icons-large li a.google-link { background-position: 50% -360px; }    
-#social-icons-small li a.so-link, #social-icons-large li a.so-link{ text-indent: initial; background-image: none;  }       
-#social-icons-small li a.so-link img, #social-icons-large li a.so-link img{ width: 24px; }
+#social-icons-small li a.google-link, #social-icons-large li a.google-link { background-position: 50% -360px; }*/    
+#social-icons-small li a.twitter-link, #social-icons-large li a.twitter-link { background-position: 4px 6px; }
+#social-icons-small li a.facebook-link, #social-icons-large li a.facebook-link { background-position: 5px -44px; }
+#social-icons-small li a.dribbble-link, #social-icons-large li a.dribbble-link { background-position: 50% -110px; }
+#social-icons-small li a.vimeo-link, #social-icons-large li a.vimeo-link { background-position: 50% -158px; }
+#social-icons-small li a.flickr-link, #social-icons-large li a.flickr-link { background-position: 50% -210px; }
+#social-icons-small li a.rss-link, #social-icons-large li a.rss-link { background-position: 50% -260px; }
+#social-icons-small li a.linkedin-link, #social-icons-large li a.linkedin-link { background-position: 5px -294px; }
+#social-icons-small li a.google-link, #social-icons-large li a.google-link { background-position: 5px -343px; }  
+#social-icons-small li a.so-link, #social-icons-large li a.so-link{ background-position: 5px -343px; }       
+#social-icons-small li a.so-link img, #social-icons-large li a.so-link img{ display: none; }
+
 
 .credits {
     border-top-right-radius: 5px;
