@@ -515,15 +515,25 @@ ul.meta {
     -webkit-transition: background-color 1s, border 1s; /* Safari and Chrome */
     -o-transition: background-color 1s, border 1s; /* Opera */
 }
+#social-icons-large li a{
+    background-color: rgb(51, 57, 58);
+    border-color:  #ff6a00;
+}
 #social-icons-small li a:hover, #social-icons-large li a:hover {
     background-color: #ff6a00;
     border-radius: 30px;
     border: 2px solid white;
 }
+#social-icons-large li a:hover{
+    border-color: rgb(51, 57, 58);
+}
 #social-icons-small ul, #social-icons-large ul {
 	margin: 0 10px 0 0;
     padding: 0;
     float: right;
+}
+#social-icons-large ul{
+    float: left;
 }
 	
 #social-icons-small li a.twitter-link, #social-icons-large li a.twitter-link { background-position: -8px -8px; }
