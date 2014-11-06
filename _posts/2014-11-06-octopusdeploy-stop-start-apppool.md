@@ -40,5 +40,7 @@ In your next release you will see two additional steps in the Task Log. If you s
 
 Job Done!
 
+Many thanks to [@ahandersson](https://twitter.com/ahandersson) for helping me out over in the [Octopus Jabbr room](https://jabbr.net/#/rooms/octopus)
+
 
 
