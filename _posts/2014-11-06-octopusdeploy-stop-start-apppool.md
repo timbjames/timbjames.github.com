@@ -25,18 +25,18 @@ To set up the Pre/Post deployment scripts within the deployment of a NuGet packa
 
 This will then give you the option to enter pre-deployment, deployment and post-deployment scripts. You will want to enter the [Stop PowerShell script](http://library.octopusdeploy.com/#!/step-template/actiontemplate-iis-apppool-stop) in the pre box.
 
-![Export Layers to files options](/img/pre-deploy.jpg)
+![Export Layers to files options](/img/pre-deploy.png)
 
 And then the [Start PowerShell script](http://library.octopusdeploy.com/#!/step-template/actiontemplate-iis-apppool-start) in the post box.
 
-![Export Layers to files options](/img/post-deploy.jpg)
+![Export Layers to files options](/img/post-deploy.png)
 
 In both scripts, you will notice <span style="color: red;">`appPoolName`</span>, this is a Variable which you will need to set up with the name of the application pool named `AppPoolName`.
 
 In your next release you will see two additional steps in the Task Log. If you see these and everything is green then you know everything is ok!
 
-![Export Layers to files options](/img/pre-deploy-success.jpg)
-![Export Layers to files options](/img/post-deploy-success.jpg)
+![Export Layers to files options](/img/pre-deploy-success.png)
+![Export Layers to files options](/img/post-deploy-success.png)
 
 Job Done!
 
