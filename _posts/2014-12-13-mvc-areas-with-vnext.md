@@ -37,7 +37,7 @@ Right click on your MVC project and add a new Folder named "Areas", then right c
 ###Step 2
 
 Add a new MVC Controller Class to your Controllers folder named `HomeController`. 
-By default VS will add the basic code for your controller + and Index view. Now once you have this, decorate the `HomeController` class with a new Attribute called `Area`
+By default VS will add the basic code for your controller + and Index view. Now once you have this, decorate the `HomeController` class with a new Attribute called `Area`. Name this after your area which in this case is "MyArea".
 
     [Area("MyArea")]
     public class HomeController : Controller
