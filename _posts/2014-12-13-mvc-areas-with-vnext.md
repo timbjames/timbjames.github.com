@@ -73,4 +73,4 @@ Your new route will work exactly the same as the "default" route with the additi
 
 Job Done!
 
-Many thanks to [@davidfowl](https://twitter.com/davidfowl) for helping me out over in the [AspNetvNext Jabbr room](https://jabbr.net/#/rooms/AspNetvNext )
+Many thanks to [@davidfowl](https://twitter.com/davidfowl) for helping me out over in the [AspNetvNext Jabbr room](https://jabbr.net/#/rooms/AspNetvNext ) and pointing me in the direction of a sample on GitHub [MvcSample.Web](https://github.com/aspnet/Mvc/tree/dev/samples/MvcSample.Web)
