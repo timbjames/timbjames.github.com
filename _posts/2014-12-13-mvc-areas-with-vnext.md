@@ -8,7 +8,6 @@ tags:
 - vnext
 - mvc
 category: blog
-video_url: http://www.youtube.com/embed/8gQGHCvMzs8?rel=0&showinfo=0&autohide=1hd=1&wmode=transparent
 image_url: /img/vnext/asp-net-vnext1.jpg
 image_alt: Asp.Net vNext
 image_caption: Working with MVC Areas in Asp.Net vNext (MVC 6)
@@ -70,3 +69,7 @@ You will now need to tell your MVC app to use a new Area route similar to AreaRe
     });
 
 Your new route will work exactly the same as the "default" route with the addition of the area. So if you now create an Index view for your `HomeController` and navigate to `/MyArea/Home` or `/MyArea/Home/Index` you will see your index view.
+
+Job Done!
+
+Many thanks to [@davidfowl](https://twitter.com/davidfowl) for helping me out over in the [AspNetvNext Jabbr room](https://jabbr.net/#/rooms/AspNetvNext )
