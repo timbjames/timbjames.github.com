@@ -31,6 +31,7 @@ Assuming you have created a new Asp.Net 5 Web Application, and can see all the l
 ###Step 1
 
 Right click on your MVC project and add a new Folder named "Areas", then right click on this new folder and create a new folder to match the name of your area, e.g. "MyArea". Right click again on this new folder and add a Controllers and Views folder. You want to end up with this;
+
 ![Areas folder structure](/img/vnext/areas/areas-folder-structure.jpg)
 
 ###Step 2
