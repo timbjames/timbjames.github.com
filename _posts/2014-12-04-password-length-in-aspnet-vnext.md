@@ -98,7 +98,7 @@ This will now resolve your class within the project.
 If you now run your project, you will now be able to enter in a password that follows the rules which you have specified. 
 However you still have the problem that if you change the password length within your `ApplicationUserManager` to something less than what is specified in the `RegisterViewModel` then you will still require a password which matches the longer length.
 
-So the next step is [Configuring your password rules in one place](/blog/2014/12/04/configuring-password-strength-vnext/)
+So the next step is Configuring your password rules in one place <!--[Configuring your password rules in one place](/blog/2014/12/04/configuring-password-in-vnext-using-configr/)--> - coming soon
 
 ###If you found this post useful in anyway, or want to leave some feedback, then please leave a comment below.
 
