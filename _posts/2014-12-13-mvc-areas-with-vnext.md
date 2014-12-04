@@ -4,7 +4,7 @@ published: true
 title: Working with MVC Areas in Asp.Net vNext (MVC 6)
 location: Glasgow
 author: Tim James
-keywords: asp.net 5, vnext, mvc areas,
+keywords: asp.net 5, vnext, mvc areas
 tags:
 - vnext
 - mvc

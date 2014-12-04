@@ -4,7 +4,7 @@ published: true
 title: Changing the Password length in Asp.Net vNext Identity
 location: Glasgow
 author: Tim James
-keywords: asp.net 5, vnext identity, password length,
+keywords: asp.net 5, vnext identity, password length
 tags:
 - vnext
 - asp.net 5
