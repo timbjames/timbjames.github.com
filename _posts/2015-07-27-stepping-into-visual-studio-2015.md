@@ -19,6 +19,7 @@ Firstly, when trying to install the final version, it will not install side-by-s
 Secondly, and much more of an issue, was when I decided to create a new asp.net 5 Web Application. I recieved this error:
 
 ![DNX SDK Version](/img/vnext/dnx-sdk.jpg)
+
 `DNX SDK version 'dnx-clr-win-x86.1.0.0-beta5' failed to install`
 
 Now this is a known issue already, but I thought I would just put a little post up on my website for future reference.
