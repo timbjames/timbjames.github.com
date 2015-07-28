@@ -2,6 +2,7 @@
 layout: post
 published: true
 title: DNX SDK version 'dnx-clr-win-x86.1.0.0-beta5' failed to install.
+keywords: dnx sdn version, dnx-clr-win-x86.1.0.0-beta5
 location: Glasgow
 author: Tim James
 tags:
