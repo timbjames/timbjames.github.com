@@ -19,24 +19,23 @@ The Post-build command was pretty simple and worked. It is the command which is 
 
 Everything was working great on the original developer's machine, also on another guys machine, but not on mine or the 4th developer's. Both I and the other developer are on Windows 7, the other two guys are on Windows 8. The Windows 7 machines were getting the error:
 
-`The command "C:\Projects\SolutionFolder\.nuget\nuget.exe pack C:\Projects\SolucationFolder\ProjectFolder\project.csproj -Prop Configuration=Debug" exited with code 1.
+`The command "C:\Projects\SolutionFolder\.nuget\nuget.exe pack C:\Projects\SolucationFolder\ProjectFolder\project.csproj -Prop Configuration=Debug" exited with code 1.`
 
 <!--excerpt-->
 
 This error didn't really give much information, so after a bit of searching the web I [read](http://stackoverflow.com/questions/22151402/how-can-i-resolve-the-error-the-command-exited-with-code-1) that it would be useful to turn on Diagnostic build output verbosity. So I switched this on, built the project and looked through the Build output to see a line:
 
-`
-Task "Exec" (TaskId:83)
-  Task Parameter:WorkingDirectory=bin\Debug\ (TaskId:83)
-  Task Parameter:Command=C:\Projects\SolutionFolder\.nuget\nuget.exe pack C:\Projects\SolucationFolder\ProjectFolder\project.csproj -Prop Configuration=Debug (TaskId:83)
-  C:\Projects\SolutionFolder\.nuget\nuget.exe pack C:\Projects\SolucationFolder\ProjectFolder\project.csproj -Prop Configuration=Debug (TaskId:83)
-  Attempting to build package from 'project.csproj'. (TaskId:83)
-  Packing files from ''. (TaskId:83)
-  Using 'project.nuspec' for metadata. (TaskId:83)
-  The path is not of a legal form. (TaskId:83)
-C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(4713,5): error MSB3073: The command "C:\Projects\SolutionFolder\.nuget\nuget.exe pack C:\Projects\SolucationFolder\ProjectFolder\project.csproj -Prop Configuration=Debug" exited with code 1.
-Done executing task "Exec" -- FAILED. (TaskId:49)
-`
+
+    Task "Exec" (TaskId:83)
+      Task Parameter:WorkingDirectory=bin\Debug\ (TaskId:83)
+      Task Parameter:Command=C:\Projects\SolutionFolder\.nuget\nuget.exe pack C:\Projects\SolucationFolder\ProjectFolder\project.csproj -Prop Configuration=Debug (TaskId:83)
+      C:\Projects\SolutionFolder\.nuget\nuget.exe pack C:\Projects\SolucationFolder\ProjectFolder\project.csproj -Prop Configuration=Debug (TaskId:83)
+      Attempting to build package from 'project.csproj'. (TaskId:83)
+      Packing files from ''. (TaskId:83)
+      Using 'project.nuspec' for metadata. (TaskId:83)
+      The path is not of a legal form. (TaskId:83)
+    C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(4713,5): error MSB3073: The command "C:\Projects\SolutionFolder\.nuget\nuget.exe pack C:\Projects\SolucationFolder\ProjectFolder\project.csproj -Prop Configuration=Debug" exited with code 1.
+    Done executing task "Exec" -- FAILED. (TaskId:49)
 
 This again didnt't really give much information either. So we decided to see what would happen if we ran the command straight through a Command Prompt window. This then gave us another error:
 
