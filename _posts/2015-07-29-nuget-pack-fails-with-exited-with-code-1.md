@@ -15,7 +15,7 @@ We had a very annoying issue in the office recently regarding building a NuGet p
 
 The Post-build command was pretty simple and worked. It is the command which is referenced on the [nuget.org Creating and Publishing](https://docs.nuget.org/create/creating-and-publishing-a-package) a Package website
 
-`$(SolutionDir).nuget\nuget.exe pack $(ProjectDir)$(ProjectFileName) -Prop Configuration=$(ConfigurationName) -Prop`
+    $(SolutionDir).nuget\nuget.exe pack $(ProjectDir)$(ProjectFileName) -Prop Configuration=$(ConfigurationName) -Prop
 
 Everything was working great on the original developer's machine, also on another guys machine, but not on mine or the 4th developer's. Both I and the other developer are on Windows 7, the other two guys are on Windows 8. The Windows 7 machines were getting the error:
 
@@ -37,9 +37,7 @@ This error didn't really give much information, so after a bit of searching the 
     C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(4713,5): error MSB3073: The command "C:\Projects\SolutionFolder\.nuget\nuget.exe pack C:\Projects\SolucationFolder\ProjectFolder\project.csproj -Prop Configuration=Debug" exited with code 1.
     Done executing task "Exec" -- FAILED. (TaskId:49)
 
-This again didnt't really give much information either. So we decided to see what would happen if we ran the command straight through a Command Prompt window. This then gave us another error:
-
-`Unable to find 'project.dll'. Make sure the project has been built`
+This again didnt't really give much information either. So we decided to see what would happen if we ran the command straight through a Command Prompt window. This then gave us another error `Unable to find 'project.dll'. Make sure the project has been built`
 
 WTF! The project was being built, and the dll's were in the bin/debug folder!
 
@@ -49,6 +47,6 @@ After spending a couple of hours on this, what we really needed was a beauty sle
 
 All it took was adding an extra `-Prop` at the end of the command line:
 
-$(SolutionDir).nuget\nuget.exe pack $(ProjectDir)$(ProjectFileName) -Prop Configuration=$(ConfigurationName) -Prop Platform=AnyCPU
+    $(SolutionDir).nuget\nuget.exe pack $(ProjectDir)$(ProjectFileName) -Prop Configuration=$(ConfigurationName) -Prop Platform=AnyCPU
 
 We are still not sure what the issue was and why this fixes it. It must be something to do with Win7 vs Win8 mixed with NuGet.exe and the command line (I am not 100% sure what though, so if you know why, **comment below and let me know**).
