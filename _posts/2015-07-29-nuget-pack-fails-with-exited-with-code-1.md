@@ -19,7 +19,7 @@ The Post-build command was pretty simple and worked. It is the command which is 
 
 Everything was working great on the original developer's machine, also on another guys machine, but not on mine or the 4th developer's. Both I and the other developer are on Windows 7, the other two guys are on Windows 8. The Windows 7 machines were getting the error:
 
-`The command "C:\Projects\SolutionFolder\.nuget\nuget.exe pack C:\Projects\SolucationFolder\ProjectFolder\project.csproj -Prop Configuration=Debug" exited with code 1.`
+    The command "C:\Projects\SolutionFolder\.nuget\nuget.exe pack C:\Projects\SolucationFolder\ProjectFolder\project.csproj -Prop Configuration=Debug" exited with code 1.
 
 <!--excerpt-->
 
