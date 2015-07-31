@@ -15,7 +15,7 @@ We had a very annoying issue in the office recently regarding building a NuGet p
 
 The Post-build command was pretty simple and worked. It is the command which is referenced on the [nuget.org Creating and Publishing](https://docs.nuget.org/create/creating-and-publishing-a-package) a Package website
 
-    $(SolutionDir).nuget\nuget.exe pack $(ProjectDir)$(ProjectFileName) -Prop Configuration=$(ConfigurationName) -Prop
+    $(SolutionDir).nuget\nuget.exe pack $(ProjectDir)$(ProjectFileName) -Prop Configuration=$(ConfigurationName)
 
 Everything was working great on the original developer's machine, also on another guys machine, but not on mine or the 4th developer's. Both I and the other developer are on Windows 7, the other two guys are on Windows 8. The Windows 7 machines were getting the error:
 
