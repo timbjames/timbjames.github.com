@@ -12,6 +12,8 @@ tags:
 category: blog
 ---
 
+I had originally planned on adding this post when I first launched my website on Github Pages, but for some strange reason the post sat in a half-written state and unpublished. It could have also been because I had never managed to get Jekyll running on Windows at that time! I have now though, so see below on how to get this up and running. :)
+
 ##Github Pages
 
 If you have never heard about Github pages before and are looking for somewhere to host your own personal blog, then I would suggest checking it out now.
