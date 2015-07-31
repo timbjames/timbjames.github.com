@@ -10,6 +10,10 @@ tags:
 - jekyll
 - markdown
 category: blog
+image_url: /img/jekyll/feature.jpg
+image_alt: Github Pages with Jekyll and Markdown
+image_caption: Static site generation with Jekyll for Github pages
+image_text: Static site generation with Jekyll for Github pages
 ---
 
 I had originally planned on adding this post when I first launched my website on Github Pages, but for some strange reason the post sat in a half-written state and unpublished. It could have also been because I had never managed to get Jekyll running on Windows at that time! I have now though, so see below on how to get this up and running. :)
