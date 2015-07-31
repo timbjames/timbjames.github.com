@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Github Pages with Jekyll and Markdown
 location: Glasgow
 author: Tim James
@@ -25,10 +25,14 @@ Once you have your repository, you can then start to create static html pages, e
 
 Not only does GitHub Pages support static html pages, but it also has support for [Jekyll](https://github.com/jekyll/jekyll)
 
-> Jekyll is a blog-aware, static site generator in Ruby (http://jekyllrb.com)[http://jekyllrb.com]
+> Jekyll is a blog-aware, static site generator in Ruby [http://jekyllrb.com](http://jekyllrb.com)
 
 Using Jekyll to generate your static html pages makes managing your website layout/headers/footers/menus much easier than manually editing multiple html files. Along with generating html pages from templates, it also makes blogging a lot easier.
-Jakyll will take your blog post content pages, the layout pages, and various other pages, process them when you push your files up to your repository and then output all the static pages.
+Jekyll will take your blog post content pages, the layout pages, and various other pages, process them when you push your files up to your repository and then output all the static pages.
 
 ##Markdown
+
+    Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name.[5][6] Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+
+[Source](https://en.wikipedia.org/wiki/Markdown)
 
