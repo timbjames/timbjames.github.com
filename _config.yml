@@ -38,4 +38,4 @@ kramdown:
     coderay_css: style
 
 gems:
-  jekyll-sitemap
+- jekyll-sitemap
