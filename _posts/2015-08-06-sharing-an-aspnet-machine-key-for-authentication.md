@@ -63,3 +63,19 @@ The very very simple solution to this was to take away this extra element in the
     Dim byteResult As Byte() = New Byte((byteSalt.Length + bytePass.Length) - 1) {}
 
 This will create the same length byte array as the c# code and result in the same encrypted password which validates correctly against that in the database!
+
+###Side note
+
+While working on this little project update, the machine key that had been sent over was in the format
+
+    <machineKey 
+        decryptionKey="{hex-key value},IsolateApps" 
+        validationKey="{hex-key value},IsolateApps" />;
+
+Now this was working well on the encryption part, but had now broken my code when trying to set the FormsAuthentication cookie `FormsAuthentication.SetAuthCookie(username, False)` and was giving me the error:
+
+    System.Configuration.ConfigurationErrorsException: Decryption key specified has invalid hex characters.
+
+The problem here is that when you include `IsolateApps` within the Machine Key config, this cuases ASP.Net to generate a unique key for each application on your server. After reading this blog post [Cryptographic Improvements in ASP.NET 4.5, pt. 2](http://blogs.msdn.com/b/webdev/archive/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2.aspx) I read that if you add `compatibilityMode="Framework20SP1"` to the Machine Key config, then this would work. It did, I was not able to set the authencation cookie, however this then opened up a can of worms with Microsoft.AspNet.SignalR! So I discovered that just removing `IsolateApps` from the config seemed to work.
+
+Not sure if this will raise an ugly head later on, so if you have any advice, then please comment below and let me know :)
