@@ -8,15 +8,17 @@ tags:
 category: blog
 ---
 
+For full specification see [http://spec.commonmark.org/0.20/](http://spec.commonmark.org/0.20/)
+
 ##Paragraphs
 
 Single line without any additional markup
 
 ##Headers
 
-    #h1
-    ##h2
-    ###h3
+    # h1
+    ## h2
+    ### h3
 
 ##Emphasis
 
