@@ -8,6 +8,10 @@ keywords: git, git commands, git ignore, git remove, git branch, git delete bran
 tags:
 - git
 category: blog
+image_url: /img/git/git.png
+image_alt: Handy Git command reference
+image_caption: Handy Git command reference
+image_text: Handy Git command reference
 ---
 
 Sooooo like a lot of developers out there, you probably have moments where you completely forget what git command you need to use for the correct job. There are hundreds even thousands of websites out there all with the same information, so I thought I would write another!
