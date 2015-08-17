@@ -46,6 +46,8 @@ This is primarily just for my own reference though, so I have everything in one 
 
 ### Branching
 
+`git branch` - Lists all the current branch's within the repository.
+
 `git branch newbranch` - Creates a new branch named "newbranch".
 
 `git checkout newbranch` - Switches to the "newbranch" branch. All changes and commits will now be to this branch.
