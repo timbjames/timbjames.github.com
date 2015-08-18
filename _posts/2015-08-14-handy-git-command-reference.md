@@ -73,3 +73,5 @@ This is primarily just for my own reference though, so I have everything in one 
 `git checkout file.txt` - Reverts back to the file from the latest commit on the current branch.
 
 For a full and indepth reference see [gitref.org](http://gitref.org/)
+
+Learn [Git Branching](http://learngitbranching.js.org/) with a fun interactive tutorial.
