@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Changing the Password length in Asp.Net vNext Identity
 location: Glasgow
 author: Tim James
