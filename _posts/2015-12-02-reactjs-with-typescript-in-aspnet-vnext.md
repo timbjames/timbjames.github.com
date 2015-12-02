@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: ReactJs with TypeScript in Asp.Net NVext
+title: ReactJs with TypeScript in Asp.Net VNext
 location: Glasgow
 author: Tim James
 keywords: asp.net 5, vnext, reactjs, typescript
