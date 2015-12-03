@@ -41,15 +41,15 @@ What I noticed, and something which might catch you out, is that there is a new 
 
 Now that you have your Asp.Net 5 Web Application solution, the next step is to add a dependency to react js using the `bowser.json` file. This file works pretty much the same as the `project.json` file for adding dependencies, in that as you start typing, you get intellisense. So start typing `react`, select it from the list, and then tab out. This will then display the version, so select the version you want and tab out again. You will end up with;
 
-![bower.json structure](/img/vnext/react/add-react-to-bower-config.jpg)
+![bower.json structure](/img/vnext/react/add-react-to-bower-config.JPG)
 
 This will then download the react dependencies and add to your Bower dependencies list along with all the required files into the wwwroot > lib folder
 
-![dependencies added](/img/vnext/react/react-dependencies-added.jpg)
+![dependencies added](/img/vnext/react/react-dependencies-added.JPG)
 
 So we don't forget later, lets add a reference to the core reactjs scripts to our _Layout page just now. So open up Views > Shared > _Layout.cshtml and add script references to both react.js and react-dom.js.
 
-![script references](/img/vnext/react/dev-app-script-references.jpg)
+![script references](/img/vnext/react/dev-app-script-references.JPG)
 
 ## Adding TypeScript
 
@@ -60,7 +60,7 @@ Once you have created your first little app.tsx file, you are then going to want
 
 At this point, add typed definitions for jQuery also. My folder structure now looks like this:
 
-![script references](/img/vnext/react/folder-structure.jpg)
+![script references](/img/vnext/react/folder-structure.JPG)
 
 ## Creating our App
 
