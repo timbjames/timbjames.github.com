@@ -108,13 +108,16 @@ Once you have your `app.tsx` file, add the following code.
     }
 
     // jQuery on ready
-    $(() => {
+    //$(() => {
         // get our mount node where we want our component to be rendered
-        var $mountNode = $('#appMountNode');     
+        //var $mountNode = $('#appMountNode');     
 
         // render the component to our mound node
-        ReactDOM.render(<MyApp />, $mountNode[0]);
-    });
+        //ReactDOM.render(<MyApp />, $mountNode[0]);
+    //});
+
+    // based on some feedback, ignore the jQuery ready code and just have;    
+    ReactDOM.render(<myapp/>, document.getElementByID('appMountNode'));
 
 As soon as you click save on the file, you should then see an app.js file be created within your wwwroot > js > mylibs filder (or what ever path you had in your "outDir" within the tsconfig.json file)
 
