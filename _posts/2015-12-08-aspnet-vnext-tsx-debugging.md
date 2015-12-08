@@ -13,7 +13,7 @@ tags:
 category: blog
 ---
 
-Following on from my recent post [ReactJs with TypeScript in AspNet VNext](/2015/12/02/reactjs-with-typescript-in-aspnet-vnext/), I have been playing about with .TSX + ReactJS more, and one of the first things I noticed was that I was unable to debug the JavaScripts files in the browser.
+Following on from my recent post [ReactJs with TypeScript in AspNet VNext](/2015/12/02/reactjs-with-typescript-in-aspnet-vnext/), I have been playing about with .TSX + ReactJS more, and one of the first things I noticed was that I was unable to debug the JavaScript files in the browser.
 
 This is down to the way in which Visual Studio + the `tsconfig.json` are generating the `.js` files which are linked to `.js.map` files.
 
@@ -28,12 +28,12 @@ The `sourceMappingURL` is a way to map a combined/minified file back to a "debug
 
     {"version":3,"file":"app.js","sourceRoot":"","sources":["../../../scripts/React/app.tsx"],"names":["MyApp","MyApp.constructor","MyApp.render"],"mappings":"....."}
 
-This is informing the browser that the file `app.js` should be mapped back to the source `app.tsx` with the relative path information. This is great! However, in our folder structure, our `.tsx` files are all outwith the running website.
+This is informing the browser that the file `app.js` should be mapped back to the source `app.tsx` with the relative path information. This is great! However, in our folder structure, our `.tsx` files are all out with the running website.
 So if you are to try and debug the JavaScript, you will not be able to as the source file will not be found.
 
 ### One Solution
 
-I had a quick search of the internet, and discovered a solution which involved writing a MVC controller which would match the path, check the existance of the file, and then serve this file. However, I didn't think this was the best solution. So in the end I decided to make use of Gulp.
+I had a quick search of the internet, and discovered a solution which involved writing a MVC controller which would match the path, check the existence of the file, and then serve this file. However, I didn't think this was the best solution. So in the end I decided to make use of Gulp.
 
 Gulp is already included in the asp.net 5 MVC project templates, and is generating minified js and css for me, so why not use it to allow me to debug my `.tsx` files. So I have added this new Task to the `gulpfile.js`
 
