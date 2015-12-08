@@ -53,6 +53,8 @@ Open up your Startup.cs file, then go down to the line `app.UseStaticFiles();` a
 
 Save this, and then run the project now. Your `.tsx` file will now be served by your app and allow you to debug!
 
+This is no way the best way to do this, so if you know of a better/alternative way, then please comment below and let me know.
+
 
 
 
