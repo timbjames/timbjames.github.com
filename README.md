@@ -11,5 +11,3 @@ Eventually after talking to @buildstarted and @adamralph I decided to follow in 
 ~~jekyll build --watch~~
 
     bundle exec jekyll serve
-
-
