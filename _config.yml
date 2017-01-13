@@ -13,10 +13,11 @@ plugins:     ./_plugins
 future:      true
 lsi:         false
 pygments:    false
-markdown:    rdiscount
+markdown:    kramdown
+## markdown:    rdiscount
 permalink:   pretty
-## highlighter: rouge
-highlighter: pygments
+highlighter: rouge
+## highlighter: pygments
 
 
 rdiscount:
