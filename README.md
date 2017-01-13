@@ -7,6 +7,6 @@ I have been using Orchard CMS now for the past year, and decided that I was goin
 Eventually after talking to @buildstarted and @adamralph I decided to follow in their footsteps of using github pages.
 
 ###Run Jekyll and build after file changes.
-    ~jekyll build --watch~ bundle exec jekyll serve
+    ~~jekyll build --watch~~ bundle exec jekyll serve
 
 
