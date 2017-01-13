@@ -1,43 +1,77 @@
-safe:        true
-auto:        true
-server:      false
-server_port: 4000
-url: http://timjames.me
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-production_url: http://timjames.me
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 
-source:      .
-destination: ./_site
-plugins:     ./_plugins
+title: Tim James
+email: timb_james@hotmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  A developer blog
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://timjames.me" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: timjames_me
+github_username:  timbjames
 
-future:      true
-lsi:         false
-pygments:    false
-## markdown:    kramdown
-markdown:    rdiscount
-permalink:   /blog/:year/:month/:day/:title/
-## permalink:   pretty
-highlighter: rouge
-## highlighter: pygments
-
-
-rdiscount:
-  extensions: [smart]
-
-kramdown:
-  auto_ids: true,
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
-  
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
-
+# Build settings
+markdown: kramdown
+theme: minima
 gems:
-- jekyll-sitemap
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+##  safe:        true
+##  auto:        true
+##  server:      false
+##  server_port: 4000
+##  url: http://timjames.me
+##  
+##  production_url: http://timjames.me
+##  
+##  source:      .
+##  destination: ./_site
+##  plugins:     ./_plugins
+##  
+##  future:      true
+##  lsi:         false
+##  pygments:    false
+##  ## markdown:    kramdown
+##  markdown:    rdiscount
+##  permalink:   /blog/:year/:month/:day/:title/
+##  ## permalink:   pretty
+##  highlighter: rouge
+##  ## highlighter: pygments
+##  
+##  
+##  rdiscount:
+##    extensions: [smart]
+##  
+##  kramdown:
+##    auto_ids: true,
+##    footnote_nr: 1
+##    entity_output: as_char
+##    toc_levels: 1..6
+##    use_coderay: false
+##    
+##    coderay:
+##      coderay_wrap: div
+##      coderay_line_numbers: inline
+##      coderay_line_numbers_start: 1
+##      coderay_tab_width: 4
+##      coderay_bold_every: 10
+##      coderay_css: style
+##  
+##  gems:
+##  - jekyll-sitemap

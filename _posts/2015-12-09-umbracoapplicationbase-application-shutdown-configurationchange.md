@@ -1,17 +1,17 @@
 ---
 layout: post
 published: true
-title: UmbracoApplicationBase Application shutdown. Details: ConfigurationChange
+title: UmbracoApplicationBase Application shutdown. Details ConfigurationChange
 location: Glasgow
 author: Tim James
 keywords: umbraco, applicationpool
 tags:
 - umbraco
 - applicationpool
-image_url: /img/umbraco/umbraco-azure.jpg
-image_alt: UmbracoApplicationBase Application shutdown. Details: ConfigurationChange
-image_caption: UmbracoApplicationBase Application shutdown. Details: ConfigurationChange
-image_text: UmbracoApplicationBase Application shutdown. Details: ConfigurationChange
+image_url: /img/umbraco/umbraco-azure.png
+image_alt: UmbracoApplicationBase Application shutdown. Details ConfigurationChange
+image_caption: UmbracoApplicationBase Application shutdown. Details ConfigurationChange
+image_text: UmbracoApplicationBase Application shutdown. Details ConfigurationChange
 category: blog
 ---
 
