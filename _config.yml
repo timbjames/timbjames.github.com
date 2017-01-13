@@ -15,7 +15,8 @@ lsi:         false
 pygments:    false
 ## markdown:    kramdown
 markdown:    rdiscount
-permalink:   pretty
+permalink:   /blog/:year/:month/:day/:title/
+## permalink:   pretty
 highlighter: rouge
 ## highlighter: pygments
 

@@ -2,7 +2,6 @@
 layout: post
 published: true
 title: UmbracoApplicationBase Application shutdown. Details: ConfigurationChange
-permalink: /blog/:year/:month/:day/umbracoapplicationbase-application-shutdown-configurationchange
 location: Glasgow
 author: Tim James
 keywords: umbraco, applicationpool
