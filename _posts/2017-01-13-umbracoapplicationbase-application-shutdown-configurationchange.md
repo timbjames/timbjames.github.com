@@ -8,16 +8,11 @@ keywords: umbraco, applicationpool
 tags:
 - umbraco
 - applicationpool
-category: blog
 image_url: /img/umbraco/umbraco-azure.jpg
 image_alt: UmbracoApplicationBase Application shutdown. Details: ConfigurationChange
 image_caption: UmbracoApplicationBase Application shutdown. Details: ConfigurationChange
 image_text: UmbracoApplicationBase Application shutdown. Details: ConfigurationChange
-sitemap:
-  lastmod: 2017-01-13
-  priority: 0.7
-  changefreq: 'monthly'
-  exclude: 'no'
+category: blog
 ---
 
 Wow! Has it been so long since my last blog post?! Seems to be! Well why not stick one up on Friday 13th! I have been exceptionally busy for the past year, with a really large project in work which has eaten up all development my time, then family life has taken up the rest.
