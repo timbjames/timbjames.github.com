@@ -14,7 +14,7 @@ image_alt: UmbracoApplicationBase Application shutdown. Details: ConfigurationCh
 image_caption: UmbracoApplicationBase Application shutdown. Details: ConfigurationChange
 image_text: UmbracoApplicationBase Application shutdown. Details: ConfigurationChange
 sitemap:
-  lastmod: 2015-07-31
+  lastmod: 2017-01-13
   priority: 0.7
   changefreq: 'monthly'
   exclude: 'no'
