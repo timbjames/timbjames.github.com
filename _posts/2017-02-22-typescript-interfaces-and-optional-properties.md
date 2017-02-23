@@ -12,7 +12,7 @@ category: blog
 
 I love TypeScript after working with it (on an enterprise system) for well over a year now. Using it with ReactJS makes things easier and very type safe. No more issues with case sensitivity Javascript errors, or accidentally assigning a string to a number. Or so I thought!
 
-Recently though, we came across an issue with the type safety on some of our interfaces. These were interfaces that included only optional properties within them.
+Recently, we came across an issue with the type safety on some of our interfaces. These were interfaces that included only optional properties within them.
 
 e.g.
 
