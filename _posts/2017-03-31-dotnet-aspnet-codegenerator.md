@@ -28,6 +28,10 @@ I have read that you need to "hack" the csproj file to get it to work;
 
 Does this work? Heck no. I am going home.
 
+**Update**
+
+Ok so this only seems to be a problem when you right click on the Controllers folder and select Add > Controller. If you just select Add > New Item, then select MVC Controller Class, it lets you add one. Annoying.
+
 <!--excerpt-->
 
 
