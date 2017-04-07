@@ -14,7 +14,7 @@ I am starting to get a bit annoyed with web development using Visual Studio thes
 
 On top of this, I have been looking at moving our existing .net core project from Visual Studio 2015 to 2017. So while playing around with a Web Application in VS17, I just want to add a simple MVC Controller. Simples eh? Well not with VS17 it would seem!
 
-![codegenerator](/img/vs17/dotnet-aspnet-codegenerator.jpg)
+![codegenerator](/img/vs17/dotnet-aspnet-codegenerator.JPG)
 
 `There was an error running the selected code generator: No executable found matching command "dotnet-aspnet-codegenetor"`
 

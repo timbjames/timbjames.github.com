@@ -21,7 +21,7 @@ Follow all the instructions to the letter, copy the configs into my configs, and
 
 `Module build failed: Error: Final loader didn't return a Buffer or String`
 
-![webpack](/img/webpack/failedtoloadfinal.jpg)
+![webpack](/img/webpack/failedtoloadfinal.JPG)
 
 <!--excerpt-->
 
