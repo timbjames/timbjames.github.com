@@ -18,7 +18,7 @@ So you are creating a new ASP.NET Core Web Application (.Net Framework) through 
 
 BOOM! Build Error
 
-![Build Error](/img/vnext/build-error.jpg) 
+![Build Error](/img/vnext/build-error.JPG) 
 
 There are no errors in the Error List, no warnings and no messages? So you check the build ouput to find
 
