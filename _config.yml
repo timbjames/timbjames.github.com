@@ -50,7 +50,7 @@ exclude:
 ##  pygments:    false
 ##  ## markdown:    kramdown
 ##  markdown:    rdiscount
-##  permalink:   /blog/:year/:month/:day/:title/
+permalink:   /blog/:year/:month/:day/:title/
 ##  ## permalink:   pretty
 ##  highlighter: rouge
 ##  ## highlighter: pygments
