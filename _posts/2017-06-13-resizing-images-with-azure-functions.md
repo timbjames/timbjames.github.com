@@ -38,29 +38,42 @@ This works well, however, the output file has the contentType as `application/oc
 For resizing of the image, I am going to install ImageResizer via nuget `install-package ImageResizer`. I am then going to make use of the input blob and an output of type CloudBlockBlob. 
 Now with the output type, you also need to provide both the blob container and the name of the storage account. It is also important to provide file access for the CloudBlockBlob. Without the file access, you will see an error about write access.
 
-So make sure to give it `FileAccess.ReadWrite`.
+So make sure to give it `FileAccess.ReadWrite`. With this, you are effectively changing the "direction" to "inout".
 
 ```csharp
-[FunctionName("resize-func")]
-public static void Run(
-[BlobTrigger("images/{name}", Connection = "fakeconnection_STORAGE")] Stream myBlob, string name,
-[Blob("resized-images/{name}", FileAccess.ReadWrite, Connection = "fakeconnection_STORAGE")] CloudBlockBlob outputBlob, TraceWriter log)
+using ImageResizer;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Host;
+using Microsoft.WindowsAzure.Storage.Blob;
+using System.IO;
+
+namespace MyProject
 {
-    log.Info($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
-
-    var instructions = new Instructions
+    public static class Function1
     {
-        Width = 570,
-        Mode = FitMode.Crop,
-        Scale = ScaleMode.Both
-    };
 
-    Stream stream = new MemoryStream();
-    ImageBuilder.Current.Build(new ImageJob(myBlob, stream, instructions));
-    stream.Seek(0, SeekOrigin.Begin);
+        [FunctionName("resize-func")]
+        public static void Run(
+        [BlobTrigger("images/{name}", Connection = "fakeconnection_STORAGE")] Stream myBlob, string name,
+        [Blob("resized-images/{name}", FileAccess.ReadWrite, Connection = "fakeconnection_STORAGE")] CloudBlockBlob outputBlob, TraceWriter log)
+        {
+            log.Info($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
 
-    outputBlob.Properties.ContentType = "image/jpeg";
-    outputBlob.UploadFromStream(stream);
+            var instructions = new Instructions
+            {
+                Width = 570,
+                Mode = FitMode.Crop,
+                Scale = ScaleMode.Both
+            };
+
+            Stream stream = new MemoryStream();
+            ImageBuilder.Current.Build(new ImageJob(myBlob, stream, instructions));
+            stream.Seek(0, SeekOrigin.Begin);
+
+            outputBlob.Properties.ContentType = "image/jpeg";
+            outputBlob.UploadFromStream(stream);
+        }
+    }
 }
 ```
 
