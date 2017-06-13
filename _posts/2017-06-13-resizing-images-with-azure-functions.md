@@ -32,7 +32,7 @@ For managing files within my blob container, I downloaded [http://storageexplore
 
 ***Now for setting up a trigger that will resize an image and then write it to another blob folder***
 
-I initially had looked on github at a resize example template (https://github.com/Azure/azure-webjobs-sdk-templates/blob/dev/Functions.Templates/Templates/ImageResizer-CSharp/run.csx)[https://github.com/Azure/azure-webjobs-sdk-templates/blob/dev/Functions.Templates/Templates/ImageResizer-CSharp/run.csx].
+I initially had looked on github at a resize example template [https://github.com/Azure/azure-webjobs-sdk-templates/blob/dev/Functions.Templates/Templates/ImageResizer-CSharp/run.csx](https://github.com/Azure/azure-webjobs-sdk-templates/blob/dev/Functions.Templates/Templates/ImageResizer-CSharp/run.csx).
 This works well, however, the output file has the contentType as `application/octet-stream` and ideally I was wanting this to be `image/jpeg`.
 
 For resizing of the image, I am going to install ImageResizer via nuget `install-package ImageResizer`. I am then going to make use of the input blob and an output of type CloudBlockBlob. 
