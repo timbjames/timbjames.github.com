@@ -66,6 +66,7 @@ public static void Run(
 
 When publised to Azure, and then clicking on the function from within your Function Apps, you will see that it creates a `function.json` file with the following code:
 
+```csharp
 {
   "bindings": [
     {
@@ -87,6 +88,7 @@ When publised to Azure, and then clicking on the function from within your Funct
   "scriptFile": "..\\bin\\MyProject.dll",
   "entryPoint": "MyProject.Function1.Run"
 }
+```
 
 This code will take in the image, resize it and then save to the output blob container. With using the CloudBlockBlob, you then have access to it's properties and can set the content type before then saving. This is something that was missing from the official github code.
 
