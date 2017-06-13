@@ -65,3 +65,6 @@ public static void Run(
 ```
 
 This code will take in the image, resize it and then save to the output blob container. With using the CloudBlockBlob, you then have access to it's properties and can set the content type before then saving. This is something that was missing from the official github code.
+
+***Something to note*** is that a lot of the examples that I read online seems to be setting the output blob container the same as the input trigger. When I did this, the blob trigger would react to the new saved file, so basically just sit in a loop of input and output.
+I initially looked into ignoring file names, e.g. anything starting with `r-`, however my attempts failed, so I found it easier to save the output to another folder. The next step I have is that I will delete the original file so that I am not taking up storage that will not be used.
