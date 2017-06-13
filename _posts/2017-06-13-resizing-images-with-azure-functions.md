@@ -64,7 +64,33 @@ public static void Run(
 }
 ```
 
+When publised to Azure, and then clicking on the function from within your Function Apps, you will see that it creates a `function.json` file with the following code:
+
+{
+  "bindings": [
+    {
+      "type": "blobTrigger",
+      "connection": "fakeconnection_STORAGE",
+      "path": "images/{name}",
+      "direction": "in",
+      "name": "myBlob"
+    },
+    {
+      "type": "blob",
+      "path": "resized-images/{name}",
+      "connection": "fakeconncetion_STORAGE",
+      "direction": "inout",
+      "name": "outputBlob"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "..\\bin\\MyProject.dll",
+  "entryPoint": "MyProject.Function1.Run"
+}
+
 This code will take in the image, resize it and then save to the output blob container. With using the CloudBlockBlob, you then have access to it's properties and can set the content type before then saving. This is something that was missing from the official github code.
 
 ***Something to note*** is that a lot of the examples that I read online seems to be setting the output blob container the same as the input trigger. When I did this, the blob trigger would react to the new saved file, so basically just sit in a loop of input and output.
 I initially looked into ignoring file names, e.g. anything starting with `r-`, however my attempts failed, so I found it easier to save the output to another folder. The next step I have is that I will delete the original file so that I am not taking up storage that will not be used.
+
+***Another note*** I found that when creating my function within Visual Studio and then publishing to Azure, it would only work when the class was named `Function1`? I tried changing it, but was then seeing an error in the Azure portal.
