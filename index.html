@@ -46,13 +46,11 @@ title: tim james blog
     {% endif %}
 
     <h1><a href="{{ post.url | remove:'.html' }}" class="post-title">{{ post.title }}</a> <i class="icon-link"></i></h1>
-  
-    {% assign link = '<a href="' + post.url + '">Read more...</a>' %}
 
-    <!-- {{ link }} -->
+    {{ post.content | split:'<!--excerpt-->' | first }}
 
-    {{ post.content | split:'<!--excerpt-->' | first | append: '...' }}
-    
+    <a href="{{ post.url | remove:'.html' | append:'#more' }}">...Read more</a>
+
     <hr>
 
     <ul class="meta">
