@@ -47,7 +47,7 @@ title: tim james blog
 
     <h1><a href="{{ post.url | remove:'.html' }}" class="post-title">{{ post.title }}</a> <i class="icon-link"></i></h1>
   
-    {{ post.content | split:'<!--excerpt-->' | first }}
+    {{ post.content | split:'<!--excerpt-->' | first + '... read more' }}
     
     <hr>
 
