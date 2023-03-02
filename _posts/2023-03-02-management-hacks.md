@@ -7,6 +7,7 @@ author: Tim James
 keywords: management, hacks
 tags:
 - management
+- hacks
 category: blog
 ---
 
