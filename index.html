@@ -48,7 +48,10 @@ title: tim james blog
     <h1><a href="{{ post.url | remove:'.html' }}" class="post-title">{{ post.title }}</a> <i class="icon-link"></i></h1>
   
     {% assign link = '<a href="' + post.url + '">Read more...</a>' %}
-    {{ post.content | split:'<!--excerpt-->' | first | append: link }}
+
+    <!-- {{ link }} -->
+
+    {{ post.content | split:'<!--excerpt-->' | first | append: '...' }}
     
     <hr>
 
